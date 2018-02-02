@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B060040-73DA-4B1A-9A9A-D4020AC587ED}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GF.Service.FandP.PriceCalculator</RootNamespace>
+    <AssemblyName>GF.Service.FandP.PriceCalculator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GF.Components.ErrorHandling">
+      <HintPath>DLL\GF.Components.ErrorHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>DLL\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PriceCalcOK.aspx" />
+    <Content Include="PriceCalc.aspx" />
+    <Content Include="PriceCalcService.svc">
+      <BrowseToURL>sorry</BrowseToURL>
+    </Content>
+    <None Include="Properties\PublishProfiles\Fand.PriceCalculator.Test.pubxml" />
+    <None Include="Properties\PublishProfiles\FandP.PriceCalculator.Prod.pubxml" />
+    <None Include="Service References\EmailClient\SendEmailService1.wsdl" />
+    <None Include="Service References\EmailClient\SendEmailService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailClient\SendEmailService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIABBRClient\KvhxBackendService1.wsdl" />
+    <None Include="Service References\TIABBRClient\KvhxBackendService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIABBRClient\KvhxBackendService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIABBRClient\KvhxBackendService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIAPriceCalcClient\configuration91.svcinfo" />
+    <None Include="Service References\TIAPriceCalcClient\configuration.svcinfo" />
+    <None Include="Service References\TIABBRClient\configuration91.svcinfo" />
+    <None Include="Service References\TIABBRClient\configuration.svcinfo" />
+    <None Include="Service References\TIABBRClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceAUResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceBAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceBIResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceCAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceEJResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceFAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceGFResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceGRResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceHAResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceHSResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceHUResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceINResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceKNResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceMCResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceSOResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceSTResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceSVResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceTIResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceULResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceUNResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.CalculatePriceVEResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TIAPriceCalcClient\GF.Service.FandP.PriceCalculator.TIAPriceCalcClient.gfcalcResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\TIAPriceCalcClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\TIAPriceCalcClient\TIAPriceCalcService1.wsdl" />
+    <None Include="Service References\TIAPriceCalcClient\TIAPriceCalcService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIAPriceCalcClient\TIAPriceCalcService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIAPriceCalcClient\TIAPriceCalcService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIAPriceCalcClient\TIAPriceCalcService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIAReferenceClient\configuration91.svcinfo" />
+    <None Include="Service References\TIAReferenceClient\configuration.svcinfo" />
+    <None Include="Service References\TIAReferenceClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\EmailClient\configuration91.svcinfo" />
+    <None Include="Service References\EmailClient\configuration.svcinfo" />
+    <None Include="Service References\EmailClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\EmailClient\SendEmailService1.disco" />
+    <None Include="Service References\TIABBRClient\KvhxBackendService1.disco" />
+    <None Include="Service References\TIAReferenceClient\TIAReferenceService1.disco" />
+    <None Include="Service References\TIAPriceCalcClient\TIAPriceCalcService1.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Service References\TIAReferenceClient\TIAReferenceService1.wsdl" />
+    <None Include="Service References\TIAReferenceClient\TIAReferenceService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIAReferenceClient\TIAReferenceService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TIAReferenceClient\TIAReferenceService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Prod.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Test.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DOM\FandPPriceCalculatorDOM.cs" />
+    <Compile Include="Helpers\ErrorsLogger.cs" />
+    <Compile Include="Helpers\InfosLogger.cs" />
+    <Compile Include="Helpers\PriceCalculatorConverter.cs" />
+    <Compile Include="Helpers\SerializationHelper.cs" />
+    <Compile Include="IPriceCalcService.cs" />
+    <Compile Include="PriceCalcOK.aspx.cs">
+      <DependentUpon>PriceCalcOK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PriceCalcOK.aspx.designer.cs">
+      <DependentUpon>PriceCalcOK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PriceCalc.aspx.cs">
+      <DependentUpon>PriceCalc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PriceCalc.aspx.designer.cs">
+      <DependentUpon>PriceCalc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PriceCalcService.svc.cs">
+      <DependentUpon>PriceCalcService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\EmailClient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TIABBRClient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TIAPriceCalcClient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TIAReferenceClient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Dev.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
+    <Folder Include="DLL\" />
+    <Folder Include="XSD\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EmailClient\" />
+    <WCFMetadataStorage Include="Service References\TIABBRClient\" />
+    <WCFMetadataStorage Include="Service References\TIAPriceCalcClient\" />
+    <WCFMetadataStorage Include="Service References\TIAReferenceClient\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>42022</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9853/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

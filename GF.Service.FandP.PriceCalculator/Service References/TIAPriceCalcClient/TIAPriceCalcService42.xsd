@@ -1,0 +1,2044 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://gfdbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="AU_request">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="AU_request" nillable="true" type="tns:AU_request" />
+  <xs:complexType name="gfcalcResponse">
+    <xs:sequence>
+      <xs:element name="product" nillable="true" type="tns:ArrayOfproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="gfcalcResponse" nillable="true" type="tns:gfcalcResponse" />
+  <xs:complexType name="ArrayOfproduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="product" nillable="true" type="tns:product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfproduct" nillable="true" type="tns:ArrayOfproduct" />
+  <xs:complexType name="product">
+    <xs:sequence>
+      <xs:element name="error_message" nillable="true" type="xs:string" />
+      <xs:element name="product_id" nillable="true" type="xs:string" />
+      <xs:element name="product_line" nillable="true" type="tns:ArrayOfproduct_line" />
+      <xs:element name="product_price" nillable="true" type="tns:price" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="product" nillable="true" type="tns:product" />
+  <xs:complexType name="ArrayOfproduct_line">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="product_line" nillable="true" type="tns:product_line" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfproduct_line" nillable="true" type="tns:ArrayOfproduct_line" />
+  <xs:complexType name="product_line">
+    <xs:sequence>
+      <xs:element name="object" nillable="true" type="tns:ArrayOfobject" />
+      <xs:element name="product_line_id" nillable="true" type="xs:string" />
+      <xs:element name="product_line_price" nillable="true" type="tns:price" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="product_line" nillable="true" type="tns:product_line" />
+  <xs:complexType name="ArrayOfobject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="object" nillable="true" type="tns:object" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfobject" nillable="true" type="tns:ArrayOfobject" />
+  <xs:complexType name="object">
+    <xs:sequence>
+      <xs:element name="object_id" nillable="true" type="xs:string" />
+      <xs:element name="object_price" nillable="true" type="tns:price" />
+      <xs:element name="risks" nillable="true" type="tns:risks" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="object" nillable="true" type="tns:object" />
+  <xs:complexType name="price">
+    <xs:sequence>
+      <xs:element name="discounted_price_monthly" type="xs:decimal" />
+      <xs:element name="discounted_price_monthlySpecified" type="xs:boolean" />
+      <xs:element name="discounted_price_yearly" type="xs:decimal" />
+      <xs:element name="discounted_price_yearlySpecified" type="xs:boolean" />
+      <xs:element name="discounted_tax_yearly" type="xs:decimal" />
+      <xs:element name="discounted_tax_yearlySpecified" type="xs:boolean" />
+      <xs:element name="fee_yearly" type="xs:decimal" />
+      <xs:element name="fee_yearlySpecified" type="xs:boolean" />
+      <xs:element name="price_monthly" type="xs:decimal" />
+      <xs:element name="price_monthlySpecified" type="xs:boolean" />
+      <xs:element name="price_yearly" type="xs:decimal" />
+      <xs:element name="price_yearlySpecified" type="xs:boolean" />
+      <xs:element name="tax_yearly" type="xs:decimal" />
+      <xs:element name="tax_yearlySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="price" nillable="true" type="tns:price" />
+  <xs:complexType name="risks">
+    <xs:sequence>
+      <xs:element name="risk" nillable="true" type="tns:ArrayOfrisk_respons" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risks" nillable="true" type="tns:risks" />
+  <xs:complexType name="ArrayOfrisk_respons">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="risk_respons" nillable="true" type="tns:risk_respons" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfrisk_respons" nillable="true" type="tns:ArrayOfrisk_respons" />
+  <xs:complexType name="risk_respons">
+    <xs:sequence>
+      <xs:element name="risk_excess" type="xs:decimal" />
+      <xs:element name="risk_excessSpecified" type="xs:boolean" />
+      <xs:element name="risk_name" nillable="true" type="xs:string" />
+      <xs:element name="risk_no" type="xs:int" />
+      <xs:element name="risk_noSpecified" type="xs:boolean" />
+      <xs:element name="risk_price" type="xs:decimal" />
+      <xs:element name="risk_priceSpecified" type="xs:boolean" />
+      <xs:element name="risk_sum" type="xs:decimal" />
+      <xs:element name="risk_sumSpecified" type="xs:boolean" />
+      <xs:element name="risk_yn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_respons" nillable="true" type="tns:risk_respons" />
+  <xs:complexType name="BA_request">
+    <xs:sequence>
+      <xs:element name="BAproduct" nillable="true" type="tns:BAproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BA_request" nillable="true" type="tns:BA_request" />
+  <xs:complexType name="BAproduct">
+    <xs:sequence>
+      <xs:element name="BAproductLine" nillable="true" type="tns:BAproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BAproduct" nillable="true" type="tns:BAproduct" />
+  <xs:complexType name="BAproductLine">
+    <xs:sequence>
+      <xs:element name="BAobject" nillable="true" type="tns:BAobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BAproductLine" nillable="true" type="tns:BAproductLine" />
+  <xs:complexType name="BAobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_BA" />
+      <xs:element name="risk" nillable="true" type="tns:risk_ba" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BAobject" nillable="true" type="tns:BAobject" />
+  <xs:complexType name="parameters_BA">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="an_abandoned_agriculture" type="tns:yes_no" />
+      <xs:element name="bike_sum_code" type="tns:bike_sum" />
+      <xs:element name="bike_sum_codeSpecified" type="xs:boolean" />
+      <xs:element name="burglar_alarm" type="tns:burglar_alarm_list" />
+      <xs:element name="general_excess" type="tns:excess_list" />
+      <xs:element name="insurance_sum_a" type="tns:sum_list_code" />
+      <xs:element name="insurance_sum_b" type="xs:int" />
+      <xs:element name="insurance_sum_bSpecified" type="xs:boolean" />
+      <xs:element name="location_desc" nillable="true" type="xs:string" />
+      <xs:element name="post_code" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element name="retired_insurance" type="tns:yes_no" />
+      <xs:element name="sum_insured" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_BA" nillable="true" type="tns:parameters_BA" />
+  <xs:simpleType name="yes_no">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="N" />
+      <xs:enumeration value="Y" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="yes_no" nillable="true" type="tns:yes_no" />
+  <xs:simpleType name="bike_sum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item15" />
+      <xs:enumeration value="Item30" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="bike_sum" nillable="true" type="tns:bike_sum" />
+  <xs:simpleType name="burglar_alarm_list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+      <xs:enumeration value="Item3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="burglar_alarm_list" nillable="true" type="tns:burglar_alarm_list" />
+  <xs:simpleType name="excess_list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item0" />
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+      <xs:enumeration value="Item3" />
+      <xs:enumeration value="Item4" />
+      <xs:enumeration value="Item5" />
+      <xs:enumeration value="Item6" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="excess_list" nillable="true" type="tns:excess_list" />
+  <xs:simpleType name="sum_list_code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item0" />
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+      <xs:enumeration value="Item3" />
+      <xs:enumeration value="Item4" />
+      <xs:enumeration value="Item5" />
+      <xs:enumeration value="Item6" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="sum_list_code" nillable="true" type="tns:sum_list_code" />
+  <xs:complexType name="risk_ba">
+    <xs:sequence>
+      <xs:element name="elektronikforsikring" nillable="true" type="tns:risk_generic" />
+      <xs:element name="elskade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="glas_og_kumme" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="indbo" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="pludselig_skade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="privatansvar" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat_af_statsafgift" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__afbestilling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__eu" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__ski" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__verden" nillable="true" type="tns:risk_generic" />
+      <xs:element name="smaabaade_og_windsurfer" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_cykeldaekning" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_guld_og_soelv" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_ba" nillable="true" type="tns:risk_ba" />
+  <xs:complexType name="risk_generic">
+    <xs:sequence>
+      <xs:element name="risk_excess" type="xs:int" />
+      <xs:element name="risk_excessSpecified" type="xs:boolean" />
+      <xs:element name="risk_sum" type="xs:int" />
+      <xs:element name="risk_sumSpecified" type="xs:boolean" />
+      <xs:element name="risk_yn" type="tns:yes_no" />
+      <xs:element name="risk_ynSpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_generic" nillable="true" type="tns:risk_generic" />
+  <xs:complexType name="BI_request">
+    <xs:sequence>
+      <xs:element name="BIproduct" nillable="true" type="tns:BIproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BI_request" nillable="true" type="tns:BI_request" />
+  <xs:complexType name="BIproduct">
+    <xs:sequence>
+      <xs:element name="BIproductLine" nillable="true" type="tns:BIproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIproduct" nillable="true" type="tns:BIproduct" />
+  <xs:complexType name="BIproductLine">
+    <xs:sequence>
+      <xs:element name="BIobject" nillable="true" type="tns:BIobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIproductLine" nillable="true" type="tns:BIproductLine" />
+  <xs:complexType name="BIobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_bil" />
+      <xs:element name="risk" nillable="true" type="tns:risk_bil" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIobject" nillable="true" type="tns:BIobject" />
+  <xs:complexType name="parameters_bil">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="atv" type="tns:yes_no" />
+      <xs:element name="car_age" type="xs:int" />
+      <xs:element name="car_art" type="xs:int" />
+      <xs:element name="car_general_excess" type="xs:int" />
+      <xs:element name="car_horsepower" type="xs:int" />
+      <xs:element name="car_manufacturer" nillable="true" type="xs:string" />
+      <xs:element name="car_model_type" nillable="true" type="xs:string" />
+      <xs:element name="car_premium_step" nillable="true" type="xs:string" />
+      <xs:element name="car_registration_number" nillable="true" type="xs:string" />
+      <xs:element name="car_tariftype" nillable="true" type="xs:string" />
+      <xs:element name="car_towbar" nillable="true" type="xs:string" />
+      <xs:element name="car_type" nillable="true" type="xs:string" />
+      <xs:element name="car_value" type="xs:int" />
+      <xs:element name="car_value_as_new" type="xs:int" />
+      <xs:element name="car_value_as_newSpecified" type="xs:boolean" />
+      <xs:element name="car_variant" nillable="true" type="xs:string" />
+      <xs:element name="car_weight" type="xs:int" />
+      <xs:element name="chiptuned" nillable="true" type="xs:string" />
+      <xs:element name="club_no" type="xs:int" />
+      <xs:element name="corporate_yn" nillable="true" type="xs:string" />
+      <xs:element name="damages_last_years" type="xs:int" />
+      <xs:element name="extra_equipment" type="xs:int" />
+      <xs:element name="extra_equipmentSpecified" type="xs:boolean" />
+      <xs:element name="include_club_membership" nillable="true" type="xs:string" />
+      <xs:element name="include_member_deposit" nillable="true" type="xs:string" />
+      <xs:element name="include_transport_assistance" nillable="true" type="xs:string" />
+      <xs:element name="leasing_car" nillable="true" type="xs:string" />
+      <xs:element name="mileage_yearly" type="xs:int" />
+      <xs:element name="new_car_product" nillable="true" type="xs:string" />
+      <xs:element name="newcar_tariftype" nillable="true" type="xs:string" />
+      <xs:element name="odometer" type="xs:int" />
+      <xs:element name="odometerSpecified" type="xs:boolean" />
+      <xs:element name="postal_code" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element name="propellant" type="xs:int" />
+      <xs:element name="rki_jn" nillable="true" type="xs:string" />
+      <xs:element name="tariff_user_age" type="xs:int" />
+      <xs:element name="tariff_user_street" nillable="true" type="xs:string" />
+      <xs:element name="vat_deduction_share" type="xs:int" />
+      <xs:element name="vat_deduction_shareSpecified" type="xs:boolean" />
+      <xs:element name="year_own_car" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_bil" nillable="true" type="tns:parameters_bil" />
+  <xs:complexType name="risk_bil">
+    <xs:sequence>
+      <xs:element name="afleveringsforsikring" nillable="true" type="tns:risk_generic" />
+      <xs:element name="ansvar" nillable="true" type="tns:risk_generic" />
+      <xs:element name="autoulykke_doed" nillable="true" type="tns:risk_generic" />
+      <xs:element name="autoulykke_varigt_men" nillable="true" type="tns:risk_generic" />
+      <xs:element name="bilafsavn" nillable="true" type="tns:risk_generic" />
+      <xs:element name="brand" nillable="true" type="tns:risk_generic" />
+      <xs:element name="delkasko" nillable="true" type="tns:risk_generic" />
+      <xs:element name="ekstra_udstyr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="foererpladsdaekning" nillable="true" type="tns:risk_generic" />
+      <xs:element name="foererulykke_doed" nillable="true" type="tns:risk_generic" />
+      <xs:element name="foererulykke_varigt_men" nillable="true" type="tns:risk_generic" />
+      <xs:element name="friskade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="kasko" nillable="true" type="tns:risk_generic" />
+      <xs:element name="leasingpakke" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+      <xs:element name="superelitebarn_1" nillable="true" type="tns:risk_generic" />
+      <xs:element name="superelitebarn_2" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_glas" nillable="true" type="tns:risk_generic" />
+      <xs:element name="vaerdiforringelse" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_bil" nillable="true" type="tns:risk_bil" />
+  <xs:complexType name="CA_request">
+    <xs:sequence>
+      <xs:element name="CAproduct" nillable="true" type="tns:CAproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CA_request" nillable="true" type="tns:CA_request" />
+  <xs:complexType name="CAproduct">
+    <xs:sequence>
+      <xs:element name="CAproductLine" nillable="true" type="tns:CAproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CAproduct" nillable="true" type="tns:CAproduct" />
+  <xs:complexType name="CAproductLine">
+    <xs:sequence>
+      <xs:element name="CAobject" nillable="true" type="tns:CAobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CAproductLine" nillable="true" type="tns:CAproductLine" />
+  <xs:complexType name="CAobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_CA" />
+      <xs:element name="risk" nillable="true" type="tns:risk_CA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CAobject" nillable="true" type="tns:CAobject" />
+  <xs:complexType name="parameters_CA">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="camper_additional_excess" nillable="true" type="xs:string" />
+      <xs:element name="camper_general_excess" type="xs:int" />
+      <xs:element name="camper_general_excessSpecified" type="xs:boolean" />
+      <xs:element name="camper_manufacturer" nillable="true" type="xs:string" />
+      <xs:element name="camper_model_type" nillable="true" type="xs:string" />
+      <xs:element name="camper_registration_number" nillable="true" type="xs:string" />
+      <xs:element name="camper_registration_year" type="xs:int" />
+      <xs:element name="camper_registration_yearSpecified" type="xs:boolean" />
+      <xs:element name="camper_stel_number" nillable="true" type="xs:string" />
+      <xs:element name="camper_trade_interval" nillable="true" type="xs:string" />
+      <xs:element name="camper_trade_value" type="xs:int" />
+      <xs:element name="camper_trade_valueSpecified" type="xs:boolean" />
+      <xs:element name="camper_variant" nillable="true" type="xs:string" />
+      <xs:element name="camper_vehicle_type" type="xs:int" />
+      <xs:element name="indbo_sum" nillable="true" type="xs:string" />
+      <xs:element name="post_area" nillable="true" type="xs:int" />
+      <xs:element name="post_areaSpecified" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q3:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_CA" nillable="true" type="tns:parameters_CA" />
+  <xs:complexType name="risk_CA">
+    <xs:sequence>
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="indbo" nillable="true" type="tns:risk_generic" />
+      <xs:element name="kasko" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_CA" nillable="true" type="tns:risk_CA" />
+  <xs:complexType name="EJ_request">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="EJ_request" nillable="true" type="tns:EJ_request" />
+  <xs:complexType name="FA_request">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="FA_request" nillable="true" type="tns:FA_request" />
+  <xs:complexType name="GF_request">
+    <xs:sequence>
+      <xs:element name="GFproduct" nillable="true" type="tns:GFproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GF_request" nillable="true" type="tns:GF_request" />
+  <xs:complexType name="GFproduct">
+    <xs:sequence>
+      <xs:element name="GFproductLine" nillable="true" type="tns:GFproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GFproduct" nillable="true" type="tns:GFproduct" />
+  <xs:complexType name="GFproductLine">
+    <xs:sequence>
+      <xs:element name="GFobject" nillable="true" type="tns:GFobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GFproductLine" nillable="true" type="tns:GFproductLine" />
+  <xs:complexType name="GFobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_GF" />
+      <xs:element name="risk" nillable="true" type="tns:risk_GF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GFobject" nillable="true" type="tns:GFobject" />
+  <xs:complexType name="parameters_GF">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="camper_insurance_company" nillable="true" type="xs:string" />
+      <xs:element name="camper_manufacturer" nillable="true" type="xs:string" />
+      <xs:element name="camper_model_type" nillable="true" type="xs:string" />
+      <xs:element name="camper_registration_number" nillable="true" type="xs:string" />
+      <xs:element name="camper_registration_year" type="xs:int" />
+      <xs:element name="car_insurance_company" nillable="true" type="xs:string" />
+      <xs:element name="car_manufacturer" nillable="true" type="xs:string" />
+      <xs:element name="car_model_type" nillable="true" type="xs:string" />
+      <xs:element name="car_registration_number" nillable="true" type="xs:string" />
+      <xs:element name="car_registration_year" type="xs:int" />
+      <xs:element name="customer_no" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_GF" nillable="true" type="tns:parameters_GF" />
+  <xs:complexType name="risk_GF">
+    <xs:sequence>
+      <xs:element name="gf_hjaelp" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_GF" nillable="true" type="tns:risk_GF" />
+  <xs:complexType name="GR_request">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="GR_request" nillable="true" type="tns:GR_request" />
+  <xs:complexType name="HA_request">
+    <xs:sequence>
+      <xs:element name="HAproduct" nillable="true" type="tns:HAproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HA_request" nillable="true" type="tns:HA_request" />
+  <xs:complexType name="HAproduct">
+    <xs:sequence>
+      <xs:element name="HAproductLine" nillable="true" type="tns:HAproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HAproduct" nillable="true" type="tns:HAproduct" />
+  <xs:complexType name="HAproductLine">
+    <xs:sequence>
+      <xs:element name="HAobject" nillable="true" type="tns:HAobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HAproductLine" nillable="true" type="tns:HAproductLine" />
+  <xs:complexType name="HAobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_HA" />
+      <xs:element name="risk" nillable="true" type="tns:risk_HA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HAobject" nillable="true" type="tns:HAobject" />
+  <xs:complexType name="parameters_HA">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="noofdogsbasiccover" nillable="true" type="xs:int" />
+      <xs:element name="noofdogsbasiccoverSpecified" type="xs:boolean" />
+      <xs:element name="noofdogsextendedcover" nillable="true" type="xs:int" />
+      <xs:element name="noofdogsextendedcoverSpecified" type="xs:boolean" />
+      <xs:element name="pet_id" nillable="true" type="xs:string" />
+      <xs:element name="pet_name" nillable="true" type="xs:string" />
+      <xs:element name="pet_type" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element name="race" nillable="true" type="xs:string" />
+      <xs:element name="race_manuel" nillable="true" type="xs:string" />
+      <xs:element name="regular_vaccine" nillable="true" type="xs:string" />
+      <xs:element name="sex" nillable="true" type="xs:string" />
+      <xs:element name="sick_insurace_from_other" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_HA" nillable="true" type="tns:parameters_HA" />
+  <xs:complexType name="risk_HA">
+    <xs:sequence>
+      <xs:element name="almindelig_daekning" nillable="true" type="tns:risk_generic" />
+      <xs:element name="ansvar" nillable="true" type="tns:risk_generic" />
+      <xs:element name="genoptraening" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="livsforsikring" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+      <xs:element name="sygeforsikring" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_ansvar" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_daekning" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_HA" nillable="true" type="tns:risk_HA" />
+  <xs:complexType name="HU_request">
+    <xs:sequence>
+      <xs:element name="HUproduct" nillable="true" type="tns:HUproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HU_request" nillable="true" type="tns:HU_request" />
+  <xs:complexType name="HUproduct">
+    <xs:sequence>
+      <xs:element name="HUproductLine" nillable="true" type="tns:HUproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HUproduct" nillable="true" type="tns:HUproduct" />
+  <xs:complexType name="HUproductLine">
+    <xs:sequence>
+      <xs:element name="HUobject" nillable="true" type="tns:HUobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HUproductLine" nillable="true" type="tns:HUproductLine" />
+  <xs:complexType name="HUobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_hu" />
+      <xs:element name="risk" nillable="true" type="tns:risk_hu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HUobject" nillable="true" type="tns:HUobject" />
+  <xs:complexType name="parameters_hu">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="an_abandoned_agriculture" type="tns:yes_no" />
+      <xs:element name="ar_econ_activity" type="xs:int" />
+      <xs:element name="ar_fire_insured" type="xs:decimal" />
+      <xs:element name="ar_living_qrtr" type="xs:int" />
+      <xs:element name="ar_outhouse" type="xs:int" />
+      <xs:element name="ar_prm_calc" type="xs:decimal" />
+      <xs:element name="basement" type="tns:yes_no2" />
+      <xs:element name="company_type" nillable="true" type="xs:string" />
+      <xs:element name="const_year" nillable="true" type="xs:string" />
+      <xs:element name="ejerskifte" type="tns:yes_no" />
+      <xs:element name="expected_completion_date" type="xs:dateTime" />
+      <xs:element name="expected_completion_dateSpecified" type="xs:boolean" />
+      <xs:element name="general_excess" type="xs:int" />
+      <xs:element name="inspection_date" type="xs:dateTime" />
+      <xs:element name="inspection_dateSpecified" type="xs:boolean" />
+      <xs:element name="inspection_status_automatic" nillable="true" type="xs:string" />
+      <xs:element name="inspection_status_manual" nillable="true" type="xs:string" />
+      <xs:element name="is_build_cons_recons_ext" type="tns:is_build_cons_recons_ext" />
+      <xs:element name="is_econ_activity" type="tns:yes_no" />
+      <xs:element name="is_on_leased" type="tns:is_on_leased" />
+      <xs:element name="is_preserved" type="tns:yes_no" />
+      <xs:element name="location_desc" nillable="true" type="xs:string" />
+      <xs:element name="no_of_floors" type="tns:no_of_floors" />
+      <xs:element name="other_heating" type="tns:heating" />
+      <xs:element name="post_area" nillable="true" type="xs:string" />
+      <xs:element name="primary_construction_type" type="tns:construction_type" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q6:ArrayOfstring" />
+      <xs:element name="raadskema_ok" type="tns:yes_no" />
+      <xs:element name="roof_type" type="tns:roof_type" />
+      <xs:element name="sekundary_construction_type" type="tns:construction_type" />
+      <xs:element name="sekundary_construction_typeSpecified" type="xs:boolean" />
+      <xs:element name="standard_heating" type="tns:yes_no2" />
+      <xs:element name="title_no" nillable="true" type="xs:string" />
+      <xs:element name="water_stop" type="tns:yes_no" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_hu" nillable="true" type="tns:parameters_hu" />
+  <xs:simpleType name="yes_no2">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="N" />
+      <xs:enumeration value="J" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="yes_no2" nillable="true" type="tns:yes_no2" />
+  <xs:simpleType name="is_build_cons_recons_ext">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+      <xs:enumeration value="Item3" />
+      <xs:enumeration value="Item4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="is_build_cons_recons_ext" nillable="true" type="tns:is_build_cons_recons_ext" />
+  <xs:simpleType name="is_on_leased">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+      <xs:enumeration value="Item3" />
+      <xs:enumeration value="Item4" />
+      <xs:enumeration value="Item5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="is_on_leased" nillable="true" type="tns:is_on_leased" />
+  <xs:simpleType name="no_of_floors">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="no_of_floors" nillable="true" type="tns:no_of_floors" />
+  <xs:simpleType name="heating">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+      <xs:enumeration value="Item3" />
+      <xs:enumeration value="Item4" />
+      <xs:enumeration value="Item5" />
+      <xs:enumeration value="Item6" />
+      <xs:enumeration value="Item7" />
+      <xs:enumeration value="Item8" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="heating" nillable="true" type="tns:heating" />
+  <xs:simpleType name="construction_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+      <xs:enumeration value="Item3" />
+      <xs:enumeration value="Item4" />
+      <xs:enumeration value="Item5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="construction_type" nillable="true" type="tns:construction_type" />
+  <xs:simpleType name="roof_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+      <xs:enumeration value="Item3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="roof_type" nillable="true" type="tns:roof_type" />
+  <xs:complexType name="risk_hu">
+    <xs:sequence>
+      <xs:element name="bygningsbrand" nillable="true" type="tns:risk_generic" />
+      <xs:element name="bygningskasko" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+      <xs:element name="stikledning" nillable="true" type="tns:risk_generic" />
+      <xs:element name="svamp_insekt_og_raad" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_raad" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_roerskade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_skadedyr" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_hu" nillable="true" type="tns:risk_hu" />
+  <xs:complexType name="KN_request">
+    <xs:sequence>
+      <xs:element name="KNproduct" nillable="true" type="tns:KNproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KN_request" nillable="true" type="tns:KN_request" />
+  <xs:complexType name="KNproduct">
+    <xs:sequence>
+      <xs:element name="KNproductLine" nillable="true" type="tns:KNproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KNproduct" nillable="true" type="tns:KNproduct" />
+  <xs:complexType name="KNproductLine">
+    <xs:sequence>
+      <xs:element name="KNobject" nillable="true" type="tns:KNobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KNproductLine" nillable="true" type="tns:KNproductLine" />
+  <xs:complexType name="KNobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_kn" />
+      <xs:element name="risk" nillable="true" type="tns:risk_kn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KNobject" nillable="true" type="tns:KNobject" />
+  <xs:complexType name="parameters_kn">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="first_year_of_registration" nillable="true" type="xs:string" />
+      <xs:element name="frame_number" nillable="true" type="xs:string" />
+      <xs:element name="kn_type" type="xs:int" />
+      <xs:element name="model" nillable="true" type="xs:string" />
+      <xs:element name="producer" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q7:ArrayOfstring" />
+      <xs:element name="registration_number" nillable="true" type="xs:string" />
+      <xs:element name="varient" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_kn" nillable="true" type="tns:parameters_kn" />
+  <xs:complexType name="risk_kn">
+    <xs:sequence>
+      <xs:element name="ansvar" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="kasko" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_kn" nillable="true" type="tns:risk_kn" />
+  <xs:complexType name="MC_request">
+    <xs:sequence>
+      <xs:element name="MCproduct" nillable="true" type="tns:MCproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MC_request" nillable="true" type="tns:MC_request" />
+  <xs:complexType name="MCproduct">
+    <xs:sequence>
+      <xs:element name="MCproductLine" nillable="true" type="tns:MCproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MCproduct" nillable="true" type="tns:MCproduct" />
+  <xs:complexType name="MCproductLine">
+    <xs:sequence>
+      <xs:element name="MCobject" nillable="true" type="tns:MCobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MCproductLine" nillable="true" type="tns:MCproductLine" />
+  <xs:complexType name="MCobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_mc" />
+      <xs:element name="risk" nillable="true" type="tns:risk_mc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MCobject" nillable="true" type="tns:MCobject" />
+  <xs:complexType name="parameters_mc">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="additional_excess" nillable="true" type="xs:string" />
+      <xs:element name="bonus_step" type="xs:int" />
+      <xs:element name="bonus_stepSpecified" type="xs:boolean" />
+      <xs:element name="cubic" type="xs:int" />
+      <xs:element name="cubicSpecified" type="xs:boolean" />
+      <xs:element name="deposited_club_code" type="xs:int" />
+      <xs:element name="deposited_club_codeSpecified" type="xs:boolean" />
+      <xs:element name="deposited_plate_place" nillable="true" type="xs:string" />
+      <xs:element name="ellert" nillable="true" type="xs:string" />
+      <xs:element name="forced_liability" nillable="true" type="xs:string" />
+      <xs:element name="manufacturer" nillable="true" type="xs:string" />
+      <xs:element name="model_desc" nillable="true" type="xs:string" />
+      <xs:element name="model_type" nillable="true" type="xs:string" />
+      <xs:element name="motorcycle_value" type="xs:int" />
+      <xs:element name="motorcycle_valueSpecified" type="xs:boolean" />
+      <xs:element name="primary_owner" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q8:ArrayOfstring" />
+      <xs:element name="registration_number" nillable="true" type="xs:string" />
+      <xs:element name="registration_year" type="xs:int" />
+      <xs:element name="registration_yearSpecified" type="xs:boolean" />
+      <xs:element name="stel_number" nillable="true" type="xs:string" />
+      <xs:element name="tariff_bonus" type="xs:int" />
+      <xs:element name="tariff_bonusSpecified" type="xs:boolean" />
+      <xs:element name="tariff_cubic" type="xs:int" />
+      <xs:element name="tariff_cubicSpecified" type="xs:boolean" />
+      <xs:element name="tariff_motorcycle_value" type="xs:int" />
+      <xs:element name="tariff_motorcycle_valueSpecified" type="xs:boolean" />
+      <xs:element name="tariff_postal_code" type="xs:int" />
+      <xs:element name="tariff_postal_codeSpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_mc" nillable="true" type="tns:parameters_mc" />
+  <xs:complexType name="risk_mc">
+    <xs:sequence>
+      <xs:element name="ansvar" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="kasko_med_vinterdaekning" nillable="true" type="tns:risk_generic" />
+      <xs:element name="kasko_uden_vinterdaekning" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat_af_statsafgift" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_mc" nillable="true" type="tns:risk_mc" />
+  <xs:complexType name="SO_request">
+    <xs:sequence>
+      <xs:element name="SOproduct" nillable="true" type="tns:SOproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SO_request" nillable="true" type="tns:SO_request" />
+  <xs:complexType name="SOproduct">
+    <xs:sequence>
+      <xs:element name="SOproductLine" nillable="true" type="tns:SOproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SOproduct" nillable="true" type="tns:SOproduct" />
+  <xs:complexType name="SOproductLine">
+    <xs:sequence>
+      <xs:element name="SOobject" nillable="true" type="tns:SOobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SOproductLine" nillable="true" type="tns:SOproductLine" />
+  <xs:complexType name="SOobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_so" />
+      <xs:element name="risk" nillable="true" type="tns:risk_so" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SOobject" nillable="true" type="tns:SOobject" />
+  <xs:complexType name="parameters_so">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisks1" type="tns:yes_no" />
+      <xs:element name="addAllRisks1Specified" type="xs:boolean" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="an_abandoned_agriculture" type="tns:yes_no" />
+      <xs:element name="ar_living_qrtr" type="xs:int" />
+      <xs:element name="ar_outhouse" type="xs:int" />
+      <xs:element name="ar_prm_calc" type="xs:decimal" />
+      <xs:element name="basement" type="tns:yes_no2" />
+      <xs:element name="burglar_alarm" type="xs:int" />
+      <xs:element name="cast_foundation" type="tns:yes_no2" />
+      <xs:element name="const_year" nillable="true" type="xs:string" />
+      <xs:element name="ejerskifte" type="tns:yes_no" />
+      <xs:element name="expected_completion_date" type="xs:dateTime" />
+      <xs:element name="expected_completion_dateSpecified" type="xs:boolean" />
+      <xs:element name="general_excess" type="xs:int" />
+      <xs:element name="inspection_date" type="xs:dateTime" />
+      <xs:element name="inspection_dateSpecified" type="xs:boolean" />
+      <xs:element name="inspection_status_automatic" nillable="true" type="xs:string" />
+      <xs:element name="inspection_status_manual" nillable="true" type="xs:string" />
+      <xs:element name="is_build_cons_recons_ext" type="tns:is_build_cons_recons_ext" />
+      <xs:element name="is_colony_have_house" type="tns:yes_no2" />
+      <xs:element name="is_indoor_swimming_pool" type="tns:yes_no2" />
+      <xs:element name="is_preserved" type="tns:yes_no" />
+      <xs:element name="location_desc" nillable="true" type="xs:string" />
+      <xs:element name="no_of_floors" type="tns:no_of_floors" />
+      <xs:element name="other_heating" type="tns:heating" />
+      <xs:element name="post_area" nillable="true" type="xs:string" />
+      <xs:element name="primary_construction_type" type="tns:construction_type" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q9:ArrayOfstring" />
+      <xs:element name="rented_house_indication" type="tns:yes_no2" />
+      <xs:element name="roof_type" type="tns:roof_type" />
+      <xs:element name="sekundary_construction_type" type="tns:construction_type" />
+      <xs:element name="sekundary_construction_typeSpecified" type="xs:boolean" />
+      <xs:element name="standard_heating" type="tns:yes_no2" />
+      <xs:element name="title_no" nillable="true" type="xs:string" />
+      <xs:element name="water_stop" type="tns:yes_no" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_so" nillable="true" type="tns:parameters_so" />
+  <xs:complexType name="risk_so">
+    <xs:sequence>
+      <xs:element name="bygningsbrand" nillable="true" type="tns:risk_generic" />
+      <xs:element name="bygningskasko" nillable="true" type="tns:risk_generic" />
+      <xs:element name="elskade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="indbo" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="raad" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+      <xs:element name="stikledning" nillable="true" type="tns:risk_generic" />
+      <xs:element name="svamp_og_insekt" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_roerskade" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_so" nillable="true" type="tns:risk_so" />
+  <xs:complexType name="ST_request">
+    <xs:sequence>
+      <xs:element name="STproduct" nillable="true" type="tns:STproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ST_request" nillable="true" type="tns:ST_request" />
+  <xs:complexType name="STproduct">
+    <xs:sequence>
+      <xs:element name="STINproductLine" nillable="true" type="tns:STINproductLine" />
+      <xs:element name="STULproductLine" nillable="true" type="tns:STULproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="STproduct" nillable="true" type="tns:STproduct" />
+  <xs:complexType name="STINproductLine">
+    <xs:sequence>
+      <xs:element name="STINobject" nillable="true" type="tns:STINobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="STINproductLine" nillable="true" type="tns:STINproductLine" />
+  <xs:complexType name="STINobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_stin" />
+      <xs:element name="risk" nillable="true" type="tns:risk_stin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="STINobject" nillable="true" type="tns:STINobject" />
+  <xs:complexType name="parameters_stin">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="expected_end_date" nillable="true" type="xs:string" />
+      <xs:element name="post_code" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q10:ArrayOfstring" />
+      <xs:element name="sum_insured" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_stin" nillable="true" type="tns:parameters_stin" />
+  <xs:complexType name="risk_stin">
+    <xs:sequence>
+      <xs:element name="elektronikforsikring" nillable="true" type="tns:risk_generic" />
+      <xs:element name="elskade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="glas_og_kumme" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="indbo" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="pludselig_skade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="privatansvar" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat_af_statsafgift" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__afbestilling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__eu" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__ski" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__verden" nillable="true" type="tns:risk_generic" />
+      <xs:element name="smaabaade_og_windsurfer" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_guld_og_soelv" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_stin" nillable="true" type="tns:risk_stin" />
+  <xs:complexType name="STULproductLine">
+    <xs:sequence>
+      <xs:element name="STULobject" nillable="true" type="tns:STULobject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="STULproductLine" nillable="true" type="tns:STULproductLine" />
+  <xs:complexType name="STULobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_stul" />
+      <xs:element name="risk" nillable="true" type="tns:risk_stul" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="STULobject" nillable="true" type="tns:STULobject" />
+  <xs:complexType name="parameters_stul">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="expected_end_date" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_stul" nillable="true" type="tns:parameters_stul" />
+  <xs:complexType name="risk_stul">
+    <xs:sequence>
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+      <xs:element name="varigt_men" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_stul" nillable="true" type="tns:risk_stul" />
+  <xs:complexType name="SV_request">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="SV_request" nillable="true" type="tns:SV_request" />
+  <xs:complexType name="TI_request">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="TI_request" nillable="true" type="tns:TI_request" />
+  <xs:complexType name="UL_request">
+    <xs:sequence>
+      <xs:element name="ULproduct" nillable="true" type="tns:ULproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UL_request" nillable="true" type="tns:UL_request" />
+  <xs:complexType name="ULproduct">
+    <xs:sequence>
+      <xs:element name="ULproductLine" nillable="true" type="tns:ArrayOfULproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ULproduct" nillable="true" type="tns:ULproduct" />
+  <xs:complexType name="ArrayOfULproductLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ULproductLine" nillable="true" type="tns:ULproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfULproductLine" nillable="true" type="tns:ArrayOfULproductLine" />
+  <xs:complexType name="ULproductLine">
+    <xs:sequence>
+      <xs:element name="ULobject" nillable="true" type="tns:ULobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ULproductLine" nillable="true" type="tns:ULproductLine" />
+  <xs:complexType name="ULobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_UL" />
+      <xs:element name="risk" nillable="true" type="tns:risk_ul" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ULobject" nillable="true" type="tns:ULobject" />
+  <xs:complexType name="parameters_UL">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="benefid1" type="xs:int" />
+      <xs:element name="benefid1Specified" type="xs:boolean" />
+      <xs:element name="benefid2" type="xs:int" />
+      <xs:element name="benefid2Specified" type="xs:boolean" />
+      <xs:element name="benefid3" type="xs:int" />
+      <xs:element name="benefid3Specified" type="xs:boolean" />
+      <xs:element name="benefid4" type="xs:int" />
+      <xs:element name="benefid4Specified" type="xs:boolean" />
+      <xs:element name="benefid5" type="xs:int" />
+      <xs:element name="benefid5Specified" type="xs:boolean" />
+      <xs:element name="benefid6" type="xs:int" />
+      <xs:element name="benefid6Specified" type="xs:boolean" />
+      <xs:element name="childcover" type="tns:yes_no" />
+      <xs:element name="childcoverSpecified" type="xs:boolean" />
+      <xs:element name="closest_relative_benefited" type="tns:benefited_list" />
+      <xs:element name="cpr" nillable="true" type="xs:string" />
+      <xs:element name="fareklasse" type="xs:int" />
+      <xs:element name="fareklasseSpecified" type="xs:boolean" />
+      <xs:element name="health_information" type="xs:int" />
+      <xs:element name="health_informationSpecified" type="xs:boolean" />
+      <xs:element name="krydsulykke" type="tns:yes_no" />
+      <xs:element name="krydsulykkeSpecified" type="xs:boolean" />
+      <xs:element name="mengrad" type="tns:mengrad" />
+      <xs:element name="name_id" type="xs:int" />
+      <xs:element name="occupation" type="tns:occupation" />
+      <xs:element name="per_share1" type="xs:int" />
+      <xs:element name="per_share1Specified" type="xs:boolean" />
+      <xs:element name="per_share2" type="xs:int" />
+      <xs:element name="per_share2Specified" type="xs:boolean" />
+      <xs:element name="per_share3" type="xs:int" />
+      <xs:element name="per_share3Specified" type="xs:boolean" />
+      <xs:element name="per_share4" type="xs:int" />
+      <xs:element name="per_share4Specified" type="xs:boolean" />
+      <xs:element name="per_share5" type="xs:int" />
+      <xs:element name="per_share5Specified" type="xs:boolean" />
+      <xs:element name="per_share6" type="xs:int" />
+      <xs:element name="per_share6Specified" type="xs:boolean" />
+      <xs:element name="person_age" type="xs:int" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q11:ArrayOfstring" />
+      <xs:element name="total_share" nillable="true" type="xs:string" />
+      <xs:element name="type_of_accident" type="tns:insurance_list" />
+      <xs:element name="type_of_coverage" type="tns:coverage_list" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_UL" nillable="true" type="tns:parameters_UL" />
+  <xs:simpleType name="benefited_list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+      <xs:enumeration value="Item3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="benefited_list" nillable="true" type="tns:benefited_list" />
+  <xs:simpleType name="mengrad">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item5" />
+      <xs:enumeration value="Item8" />
+      <xs:enumeration value="Item10" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="mengrad" nillable="true" type="tns:mengrad" />
+  <xs:simpleType name="occupation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+      <xs:enumeration value="Item3" />
+      <xs:enumeration value="Item4" />
+      <xs:enumeration value="Item5" />
+      <xs:enumeration value="Item6" />
+      <xs:enumeration value="Item7" />
+      <xs:enumeration value="Item8" />
+      <xs:enumeration value="Item9" />
+      <xs:enumeration value="Item10" />
+      <xs:enumeration value="Item11" />
+      <xs:enumeration value="Item12" />
+      <xs:enumeration value="Item13" />
+      <xs:enumeration value="Item14" />
+      <xs:enumeration value="Item15" />
+      <xs:enumeration value="Item16" />
+      <xs:enumeration value="Item17" />
+      <xs:enumeration value="Item18" />
+      <xs:enumeration value="Item19" />
+      <xs:enumeration value="Item20" />
+      <xs:enumeration value="Item21" />
+      <xs:enumeration value="Item22" />
+      <xs:enumeration value="Item23" />
+      <xs:enumeration value="Item24" />
+      <xs:enumeration value="Item25" />
+      <xs:enumeration value="Item26" />
+      <xs:enumeration value="Item27" />
+      <xs:enumeration value="Item28" />
+      <xs:enumeration value="Item29" />
+      <xs:enumeration value="Item30" />
+      <xs:enumeration value="Item31" />
+      <xs:enumeration value="Item32" />
+      <xs:enumeration value="Item33" />
+      <xs:enumeration value="Item34" />
+      <xs:enumeration value="Item35" />
+      <xs:enumeration value="Item36" />
+      <xs:enumeration value="Item37" />
+      <xs:enumeration value="Item38" />
+      <xs:enumeration value="Item39" />
+      <xs:enumeration value="Item40" />
+      <xs:enumeration value="Item41" />
+      <xs:enumeration value="Item42" />
+      <xs:enumeration value="Item43" />
+      <xs:enumeration value="Item44" />
+      <xs:enumeration value="Item45" />
+      <xs:enumeration value="Item46" />
+      <xs:enumeration value="Item47" />
+      <xs:enumeration value="Item48" />
+      <xs:enumeration value="Item49" />
+      <xs:enumeration value="Item50" />
+      <xs:enumeration value="Item51" />
+      <xs:enumeration value="Item52" />
+      <xs:enumeration value="Item53" />
+      <xs:enumeration value="Item54" />
+      <xs:enumeration value="Item55" />
+      <xs:enumeration value="Item56" />
+      <xs:enumeration value="Item57" />
+      <xs:enumeration value="Item58" />
+      <xs:enumeration value="Item59" />
+      <xs:enumeration value="Item60" />
+      <xs:enumeration value="Item61" />
+      <xs:enumeration value="Item62" />
+      <xs:enumeration value="Item63" />
+      <xs:enumeration value="Item64" />
+      <xs:enumeration value="Item65" />
+      <xs:enumeration value="Item66" />
+      <xs:enumeration value="Item67" />
+      <xs:enumeration value="Item68" />
+      <xs:enumeration value="Item69" />
+      <xs:enumeration value="Item70" />
+      <xs:enumeration value="Item71" />
+      <xs:enumeration value="Item72" />
+      <xs:enumeration value="Item73" />
+      <xs:enumeration value="Item74" />
+      <xs:enumeration value="Item75" />
+      <xs:enumeration value="Item76" />
+      <xs:enumeration value="Item77" />
+      <xs:enumeration value="Item78" />
+      <xs:enumeration value="Item79" />
+      <xs:enumeration value="Item80" />
+      <xs:enumeration value="Item81" />
+      <xs:enumeration value="Item82" />
+      <xs:enumeration value="Item83" />
+      <xs:enumeration value="Item84" />
+      <xs:enumeration value="Item85" />
+      <xs:enumeration value="Item86" />
+      <xs:enumeration value="Item87" />
+      <xs:enumeration value="Item88" />
+      <xs:enumeration value="Item89" />
+      <xs:enumeration value="Item90" />
+      <xs:enumeration value="Item91" />
+      <xs:enumeration value="Item92" />
+      <xs:enumeration value="Item93" />
+      <xs:enumeration value="Item94" />
+      <xs:enumeration value="Item95" />
+      <xs:enumeration value="Item96" />
+      <xs:enumeration value="Item97" />
+      <xs:enumeration value="Item98" />
+      <xs:enumeration value="Item99" />
+      <xs:enumeration value="Item100" />
+      <xs:enumeration value="Item101" />
+      <xs:enumeration value="Item102" />
+      <xs:enumeration value="Item103" />
+      <xs:enumeration value="Item104" />
+      <xs:enumeration value="Item105" />
+      <xs:enumeration value="Item106" />
+      <xs:enumeration value="Item107" />
+      <xs:enumeration value="Item108" />
+      <xs:enumeration value="Item109" />
+      <xs:enumeration value="Item110" />
+      <xs:enumeration value="Item111" />
+      <xs:enumeration value="Item112" />
+      <xs:enumeration value="Item113" />
+      <xs:enumeration value="Item114" />
+      <xs:enumeration value="Item115" />
+      <xs:enumeration value="Item116" />
+      <xs:enumeration value="Item117" />
+      <xs:enumeration value="Item118" />
+      <xs:enumeration value="Item119" />
+      <xs:enumeration value="Item120" />
+      <xs:enumeration value="Item121" />
+      <xs:enumeration value="Item122" />
+      <xs:enumeration value="Item123" />
+      <xs:enumeration value="Item124" />
+      <xs:enumeration value="Item125" />
+      <xs:enumeration value="Item126" />
+      <xs:enumeration value="Item127" />
+      <xs:enumeration value="Item128" />
+      <xs:enumeration value="Item129" />
+      <xs:enumeration value="Item130" />
+      <xs:enumeration value="Item131" />
+      <xs:enumeration value="Item132" />
+      <xs:enumeration value="Item133" />
+      <xs:enumeration value="Item134" />
+      <xs:enumeration value="Item135" />
+      <xs:enumeration value="Item136" />
+      <xs:enumeration value="Item137" />
+      <xs:enumeration value="Item138" />
+      <xs:enumeration value="Item139" />
+      <xs:enumeration value="Item140" />
+      <xs:enumeration value="Item141" />
+      <xs:enumeration value="Item142" />
+      <xs:enumeration value="Item143" />
+      <xs:enumeration value="Item144" />
+      <xs:enumeration value="Item145" />
+      <xs:enumeration value="Item146" />
+      <xs:enumeration value="Item147" />
+      <xs:enumeration value="Item148" />
+      <xs:enumeration value="Item149" />
+      <xs:enumeration value="Item150" />
+      <xs:enumeration value="Item151" />
+      <xs:enumeration value="Item152" />
+      <xs:enumeration value="Item153" />
+      <xs:enumeration value="Item154" />
+      <xs:enumeration value="Item155" />
+      <xs:enumeration value="Item156" />
+      <xs:enumeration value="Item157" />
+      <xs:enumeration value="Item158" />
+      <xs:enumeration value="Item159" />
+      <xs:enumeration value="Item160" />
+      <xs:enumeration value="Item161" />
+      <xs:enumeration value="Item162" />
+      <xs:enumeration value="Item163" />
+      <xs:enumeration value="Item164" />
+      <xs:enumeration value="Item165" />
+      <xs:enumeration value="Item166" />
+      <xs:enumeration value="Item167" />
+      <xs:enumeration value="Item168" />
+      <xs:enumeration value="Item169" />
+      <xs:enumeration value="Item170" />
+      <xs:enumeration value="Item171" />
+      <xs:enumeration value="Item172" />
+      <xs:enumeration value="Item173" />
+      <xs:enumeration value="Item174" />
+      <xs:enumeration value="Item175" />
+      <xs:enumeration value="Item176" />
+      <xs:enumeration value="Item177" />
+      <xs:enumeration value="Item178" />
+      <xs:enumeration value="Item179" />
+      <xs:enumeration value="Item180" />
+      <xs:enumeration value="Item181" />
+      <xs:enumeration value="Item182" />
+      <xs:enumeration value="Item183" />
+      <xs:enumeration value="Item184" />
+      <xs:enumeration value="Item185" />
+      <xs:enumeration value="Item186" />
+      <xs:enumeration value="Item187" />
+      <xs:enumeration value="Item188" />
+      <xs:enumeration value="Item189" />
+      <xs:enumeration value="Item190" />
+      <xs:enumeration value="Item191" />
+      <xs:enumeration value="Item192" />
+      <xs:enumeration value="Item193" />
+      <xs:enumeration value="Item194" />
+      <xs:enumeration value="Item195" />
+      <xs:enumeration value="Item196" />
+      <xs:enumeration value="Item197" />
+      <xs:enumeration value="Item198" />
+      <xs:enumeration value="Item199" />
+      <xs:enumeration value="Item200" />
+      <xs:enumeration value="Item201" />
+      <xs:enumeration value="Item202" />
+      <xs:enumeration value="Item203" />
+      <xs:enumeration value="Item204" />
+      <xs:enumeration value="Item205" />
+      <xs:enumeration value="Item206" />
+      <xs:enumeration value="Item207" />
+      <xs:enumeration value="Item208" />
+      <xs:enumeration value="Item209" />
+      <xs:enumeration value="Item210" />
+      <xs:enumeration value="Item211" />
+      <xs:enumeration value="Item212" />
+      <xs:enumeration value="Item213" />
+      <xs:enumeration value="Item214" />
+      <xs:enumeration value="Item215" />
+      <xs:enumeration value="Item216" />
+      <xs:enumeration value="Item217" />
+      <xs:enumeration value="Item218" />
+      <xs:enumeration value="Item219" />
+      <xs:enumeration value="Item220" />
+      <xs:enumeration value="Item221" />
+      <xs:enumeration value="Item222" />
+      <xs:enumeration value="Item223" />
+      <xs:enumeration value="Item224" />
+      <xs:enumeration value="Item225" />
+      <xs:enumeration value="Item226" />
+      <xs:enumeration value="Item227" />
+      <xs:enumeration value="Item228" />
+      <xs:enumeration value="Item229" />
+      <xs:enumeration value="Item230" />
+      <xs:enumeration value="Item231" />
+      <xs:enumeration value="Item232" />
+      <xs:enumeration value="Item233" />
+      <xs:enumeration value="Item234" />
+      <xs:enumeration value="Item235" />
+      <xs:enumeration value="Item236" />
+      <xs:enumeration value="Item237" />
+      <xs:enumeration value="Item238" />
+      <xs:enumeration value="Item239" />
+      <xs:enumeration value="Item240" />
+      <xs:enumeration value="Item241" />
+      <xs:enumeration value="Item242" />
+      <xs:enumeration value="Item243" />
+      <xs:enumeration value="Item244" />
+      <xs:enumeration value="Item245" />
+      <xs:enumeration value="Item246" />
+      <xs:enumeration value="Item247" />
+      <xs:enumeration value="Item248" />
+      <xs:enumeration value="Item249" />
+      <xs:enumeration value="Item250" />
+      <xs:enumeration value="Item251" />
+      <xs:enumeration value="Item252" />
+      <xs:enumeration value="Item253" />
+      <xs:enumeration value="Item254" />
+      <xs:enumeration value="Item255" />
+      <xs:enumeration value="Item256" />
+      <xs:enumeration value="Item257" />
+      <xs:enumeration value="Item258" />
+      <xs:enumeration value="Item259" />
+      <xs:enumeration value="Item260" />
+      <xs:enumeration value="Item261" />
+      <xs:enumeration value="Item262" />
+      <xs:enumeration value="Item263" />
+      <xs:enumeration value="Item264" />
+      <xs:enumeration value="Item265" />
+      <xs:enumeration value="Item266" />
+      <xs:enumeration value="Item267" />
+      <xs:enumeration value="Item268" />
+      <xs:enumeration value="Item269" />
+      <xs:enumeration value="Item270" />
+      <xs:enumeration value="Item271" />
+      <xs:enumeration value="Item272" />
+      <xs:enumeration value="Item273" />
+      <xs:enumeration value="Item274" />
+      <xs:enumeration value="Item275" />
+      <xs:enumeration value="Item276" />
+      <xs:enumeration value="Item277" />
+      <xs:enumeration value="Item278" />
+      <xs:enumeration value="Item279" />
+      <xs:enumeration value="Item280" />
+      <xs:enumeration value="Item281" />
+      <xs:enumeration value="Item282" />
+      <xs:enumeration value="Item283" />
+      <xs:enumeration value="Item284" />
+      <xs:enumeration value="Item285" />
+      <xs:enumeration value="Item286" />
+      <xs:enumeration value="Item287" />
+      <xs:enumeration value="Item288" />
+      <xs:enumeration value="Item289" />
+      <xs:enumeration value="Item290" />
+      <xs:enumeration value="Item291" />
+      <xs:enumeration value="Item292" />
+      <xs:enumeration value="Item293" />
+      <xs:enumeration value="Item294" />
+      <xs:enumeration value="Item295" />
+      <xs:enumeration value="Item296" />
+      <xs:enumeration value="Item297" />
+      <xs:enumeration value="Item298" />
+      <xs:enumeration value="Item299" />
+      <xs:enumeration value="Item300" />
+      <xs:enumeration value="Item301" />
+      <xs:enumeration value="Item302" />
+      <xs:enumeration value="Item303" />
+      <xs:enumeration value="Item304" />
+      <xs:enumeration value="Item305" />
+      <xs:enumeration value="Item306" />
+      <xs:enumeration value="Item307" />
+      <xs:enumeration value="Item308" />
+      <xs:enumeration value="Item309" />
+      <xs:enumeration value="Item310" />
+      <xs:enumeration value="Item311" />
+      <xs:enumeration value="Item312" />
+      <xs:enumeration value="Item313" />
+      <xs:enumeration value="Item314" />
+      <xs:enumeration value="Item315" />
+      <xs:enumeration value="Item316" />
+      <xs:enumeration value="Item317" />
+      <xs:enumeration value="Item318" />
+      <xs:enumeration value="Item319" />
+      <xs:enumeration value="Item320" />
+      <xs:enumeration value="Item321" />
+      <xs:enumeration value="Item322" />
+      <xs:enumeration value="Item323" />
+      <xs:enumeration value="Item324" />
+      <xs:enumeration value="Item325" />
+      <xs:enumeration value="Item326" />
+      <xs:enumeration value="Item327" />
+      <xs:enumeration value="Item328" />
+      <xs:enumeration value="Item329" />
+      <xs:enumeration value="Item330" />
+      <xs:enumeration value="Item331" />
+      <xs:enumeration value="Item332" />
+      <xs:enumeration value="Item333" />
+      <xs:enumeration value="Item334" />
+      <xs:enumeration value="Item335" />
+      <xs:enumeration value="Item336" />
+      <xs:enumeration value="Item337" />
+      <xs:enumeration value="Item338" />
+      <xs:enumeration value="Item339" />
+      <xs:enumeration value="Item340" />
+      <xs:enumeration value="Item341" />
+      <xs:enumeration value="Item342" />
+      <xs:enumeration value="Item343" />
+      <xs:enumeration value="Item344" />
+      <xs:enumeration value="Item345" />
+      <xs:enumeration value="Item346" />
+      <xs:enumeration value="Item347" />
+      <xs:enumeration value="Item348" />
+      <xs:enumeration value="Item349" />
+      <xs:enumeration value="Item350" />
+      <xs:enumeration value="Item351" />
+      <xs:enumeration value="Item352" />
+      <xs:enumeration value="Item353" />
+      <xs:enumeration value="Item354" />
+      <xs:enumeration value="Item355" />
+      <xs:enumeration value="Item356" />
+      <xs:enumeration value="Item357" />
+      <xs:enumeration value="Item358" />
+      <xs:enumeration value="Item359" />
+      <xs:enumeration value="Item360" />
+      <xs:enumeration value="Item361" />
+      <xs:enumeration value="Item362" />
+      <xs:enumeration value="Item363" />
+      <xs:enumeration value="Item364" />
+      <xs:enumeration value="Item365" />
+      <xs:enumeration value="Item366" />
+      <xs:enumeration value="Item367" />
+      <xs:enumeration value="Item368" />
+      <xs:enumeration value="Item369" />
+      <xs:enumeration value="Item370" />
+      <xs:enumeration value="Item371" />
+      <xs:enumeration value="Item372" />
+      <xs:enumeration value="Item373" />
+      <xs:enumeration value="Item374" />
+      <xs:enumeration value="Item375" />
+      <xs:enumeration value="Item376" />
+      <xs:enumeration value="Item377" />
+      <xs:enumeration value="Item378" />
+      <xs:enumeration value="Item379" />
+      <xs:enumeration value="Item380" />
+      <xs:enumeration value="Item381" />
+      <xs:enumeration value="Item382" />
+      <xs:enumeration value="Item383" />
+      <xs:enumeration value="Item384" />
+      <xs:enumeration value="Item385" />
+      <xs:enumeration value="Item386" />
+      <xs:enumeration value="Item387" />
+      <xs:enumeration value="Item388" />
+      <xs:enumeration value="Item389" />
+      <xs:enumeration value="Item390" />
+      <xs:enumeration value="Item391" />
+      <xs:enumeration value="Item392" />
+      <xs:enumeration value="Item393" />
+      <xs:enumeration value="Item394" />
+      <xs:enumeration value="Item395" />
+      <xs:enumeration value="Item396" />
+      <xs:enumeration value="Item397" />
+      <xs:enumeration value="Item398" />
+      <xs:enumeration value="Item399" />
+      <xs:enumeration value="Item400" />
+      <xs:enumeration value="Item401" />
+      <xs:enumeration value="Item402" />
+      <xs:enumeration value="Item403" />
+      <xs:enumeration value="Item404" />
+      <xs:enumeration value="Item405" />
+      <xs:enumeration value="Item406" />
+      <xs:enumeration value="Item407" />
+      <xs:enumeration value="Item408" />
+      <xs:enumeration value="Item409" />
+      <xs:enumeration value="Item410" />
+      <xs:enumeration value="Item411" />
+      <xs:enumeration value="Item412" />
+      <xs:enumeration value="Item413" />
+      <xs:enumeration value="Item414" />
+      <xs:enumeration value="Item415" />
+      <xs:enumeration value="Item416" />
+      <xs:enumeration value="Item417" />
+      <xs:enumeration value="Item418" />
+      <xs:enumeration value="Item419" />
+      <xs:enumeration value="Item420" />
+      <xs:enumeration value="Item421" />
+      <xs:enumeration value="Item422" />
+      <xs:enumeration value="Item423" />
+      <xs:enumeration value="Item424" />
+      <xs:enumeration value="Item425" />
+      <xs:enumeration value="Item426" />
+      <xs:enumeration value="Item427" />
+      <xs:enumeration value="Item428" />
+      <xs:enumeration value="Item429" />
+      <xs:enumeration value="Item430" />
+      <xs:enumeration value="Item431" />
+      <xs:enumeration value="Item432" />
+      <xs:enumeration value="Item433" />
+      <xs:enumeration value="Item434" />
+      <xs:enumeration value="Item435" />
+      <xs:enumeration value="Item436" />
+      <xs:enumeration value="Item437" />
+      <xs:enumeration value="Item438" />
+      <xs:enumeration value="Item439" />
+      <xs:enumeration value="Item440" />
+      <xs:enumeration value="Item441" />
+      <xs:enumeration value="Item442" />
+      <xs:enumeration value="Item443" />
+      <xs:enumeration value="Item444" />
+      <xs:enumeration value="Item445" />
+      <xs:enumeration value="Item446" />
+      <xs:enumeration value="Item447" />
+      <xs:enumeration value="Item448" />
+      <xs:enumeration value="Item449" />
+      <xs:enumeration value="Item450" />
+      <xs:enumeration value="Item451" />
+      <xs:enumeration value="Item452" />
+      <xs:enumeration value="Item453" />
+      <xs:enumeration value="Item454" />
+      <xs:enumeration value="Item455" />
+      <xs:enumeration value="Item456" />
+      <xs:enumeration value="Item457" />
+      <xs:enumeration value="Item458" />
+      <xs:enumeration value="Item459" />
+      <xs:enumeration value="Item460" />
+      <xs:enumeration value="Item461" />
+      <xs:enumeration value="Item462" />
+      <xs:enumeration value="Item463" />
+      <xs:enumeration value="Item464" />
+      <xs:enumeration value="Item465" />
+      <xs:enumeration value="Item466" />
+      <xs:enumeration value="Item467" />
+      <xs:enumeration value="Item468" />
+      <xs:enumeration value="Item469" />
+      <xs:enumeration value="Item470" />
+      <xs:enumeration value="Item471" />
+      <xs:enumeration value="Item472" />
+      <xs:enumeration value="Item473" />
+      <xs:enumeration value="Item474" />
+      <xs:enumeration value="Item475" />
+      <xs:enumeration value="Item476" />
+      <xs:enumeration value="Item477" />
+      <xs:enumeration value="Item478" />
+      <xs:enumeration value="Item479" />
+      <xs:enumeration value="Item480" />
+      <xs:enumeration value="Item481" />
+      <xs:enumeration value="Item482" />
+      <xs:enumeration value="Item483" />
+      <xs:enumeration value="Item484" />
+      <xs:enumeration value="Item485" />
+      <xs:enumeration value="Item486" />
+      <xs:enumeration value="Item487" />
+      <xs:enumeration value="Item488" />
+      <xs:enumeration value="Item489" />
+      <xs:enumeration value="Item490" />
+      <xs:enumeration value="Item491" />
+      <xs:enumeration value="Item492" />
+      <xs:enumeration value="Item493" />
+      <xs:enumeration value="Item494" />
+      <xs:enumeration value="Item495" />
+      <xs:enumeration value="Item496" />
+      <xs:enumeration value="Item497" />
+      <xs:enumeration value="Item498" />
+      <xs:enumeration value="Item499" />
+      <xs:enumeration value="Item500" />
+      <xs:enumeration value="Item501" />
+      <xs:enumeration value="Item502" />
+      <xs:enumeration value="Item503" />
+      <xs:enumeration value="Item504" />
+      <xs:enumeration value="Item505" />
+      <xs:enumeration value="Item506" />
+      <xs:enumeration value="Item507" />
+      <xs:enumeration value="Item508" />
+      <xs:enumeration value="Item509" />
+      <xs:enumeration value="Item510" />
+      <xs:enumeration value="Item511" />
+      <xs:enumeration value="Item512" />
+      <xs:enumeration value="Item513" />
+      <xs:enumeration value="Item514" />
+      <xs:enumeration value="Item515" />
+      <xs:enumeration value="Item516" />
+      <xs:enumeration value="Item517" />
+      <xs:enumeration value="Item518" />
+      <xs:enumeration value="Item519" />
+      <xs:enumeration value="Item520" />
+      <xs:enumeration value="Item521" />
+      <xs:enumeration value="Item522" />
+      <xs:enumeration value="Item523" />
+      <xs:enumeration value="Item524" />
+      <xs:enumeration value="Item525" />
+      <xs:enumeration value="Item526" />
+      <xs:enumeration value="Item527" />
+      <xs:enumeration value="Item528" />
+      <xs:enumeration value="Item529" />
+      <xs:enumeration value="Item530" />
+      <xs:enumeration value="Item531" />
+      <xs:enumeration value="Item532" />
+      <xs:enumeration value="Item533" />
+      <xs:enumeration value="Item534" />
+      <xs:enumeration value="Item535" />
+      <xs:enumeration value="Item536" />
+      <xs:enumeration value="Item537" />
+      <xs:enumeration value="Item538" />
+      <xs:enumeration value="Item539" />
+      <xs:enumeration value="Item540" />
+      <xs:enumeration value="Item541" />
+      <xs:enumeration value="Item542" />
+      <xs:enumeration value="Item543" />
+      <xs:enumeration value="Item544" />
+      <xs:enumeration value="Item545" />
+      <xs:enumeration value="Item546" />
+      <xs:enumeration value="Item547" />
+      <xs:enumeration value="Item548" />
+      <xs:enumeration value="Item549" />
+      <xs:enumeration value="Item550" />
+      <xs:enumeration value="Item551" />
+      <xs:enumeration value="Item552" />
+      <xs:enumeration value="Item553" />
+      <xs:enumeration value="Item554" />
+      <xs:enumeration value="Item555" />
+      <xs:enumeration value="Item556" />
+      <xs:enumeration value="Item557" />
+      <xs:enumeration value="Item558" />
+      <xs:enumeration value="Item559" />
+      <xs:enumeration value="Item560" />
+      <xs:enumeration value="Item561" />
+      <xs:enumeration value="Item562" />
+      <xs:enumeration value="Item563" />
+      <xs:enumeration value="Item564" />
+      <xs:enumeration value="Item565" />
+      <xs:enumeration value="Item566" />
+      <xs:enumeration value="Item567" />
+      <xs:enumeration value="Item568" />
+      <xs:enumeration value="Item569" />
+      <xs:enumeration value="Item570" />
+      <xs:enumeration value="Item571" />
+      <xs:enumeration value="Item5360" />
+      <xs:enumeration value="Item5370" />
+      <xs:enumeration value="Item5380" />
+      <xs:enumeration value="Item5390" />
+      <xs:enumeration value="Item5400" />
+      <xs:enumeration value="Item5410" />
+      <xs:enumeration value="Item5420" />
+      <xs:enumeration value="Item5430" />
+      <xs:enumeration value="Item5440" />
+      <xs:enumeration value="Item5450" />
+      <xs:enumeration value="Item5460" />
+      <xs:enumeration value="Item5470" />
+      <xs:enumeration value="Item5480" />
+      <xs:enumeration value="Item5490" />
+      <xs:enumeration value="Item5500" />
+      <xs:enumeration value="Item5510" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="occupation" nillable="true" type="tns:occupation" />
+  <xs:simpleType name="insurance_list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+      <xs:enumeration value="Item3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="insurance_list" nillable="true" type="tns:insurance_list" />
+  <xs:simpleType name="coverage_list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Item1" />
+      <xs:enumeration value="Item2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="coverage_list" nillable="true" type="tns:coverage_list" />
+  <xs:complexType name="risk_ul">
+    <xs:sequence>
+      <xs:element name="boernedaekning" nillable="true" type="tns:risk_generic" />
+      <xs:element name="doed" nillable="true" type="tns:risk_generic" />
+      <xs:element name="doedsfaldssum" nillable="true" type="tns:risk_generic" />
+      <xs:element name="farlig_sport" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="kritisk_sygdom" nillable="true" type="tns:risk_generic" />
+      <xs:element name="kritisk_sygdom_2" nillable="true" type="tns:risk_generic" />
+      <xs:element name="livsforsikring" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+      <xs:element name="sygdomsforsikring" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_daekning" nillable="true" type="tns:risk_generic" />
+      <xs:element name="varigt_men" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_ul" nillable="true" type="tns:risk_ul" />
+  <xs:complexType name="UN_request">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="UN_request" nillable="true" type="tns:UN_request" />
+  <xs:complexType name="VE_request">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="VE_request" nillable="true" type="tns:VE_request" />
+  <xs:complexType name="IN_request">
+    <xs:sequence>
+      <xs:element name="INproduct" nillable="true" type="tns:INproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IN_request" nillable="true" type="tns:IN_request" />
+  <xs:complexType name="INproduct">
+    <xs:sequence>
+      <xs:element name="INproductLine" nillable="true" type="tns:INproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="INproduct" nillable="true" type="tns:INproduct" />
+  <xs:complexType name="INproductLine">
+    <xs:sequence>
+      <xs:element name="INobject" nillable="true" type="tns:INobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="INproductLine" nillable="true" type="tns:INproductLine" />
+  <xs:complexType name="INobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_IN" />
+      <xs:element name="risk" nillable="true" type="tns:risk_IN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="INobject" nillable="true" type="tns:INobject" />
+  <xs:complexType name="parameters_IN">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="affinity_no" type="xs:int" />
+      <xs:element name="affinity_noSpecified" type="xs:boolean" />
+      <xs:element name="basement_grp" nillable="true" type="xs:string" />
+      <xs:element name="bbr_basement_areasize" type="xs:int" />
+      <xs:element name="bbr_basement_areasizeSpecified" type="xs:boolean" />
+      <xs:element name="bbr_floor_no" nillable="true" type="xs:string" />
+      <xs:element name="bbr_housing_usage" nillable="true" type="xs:string" />
+      <xs:element name="bbr_kvhx" nillable="true" type="xs:string" />
+      <xs:element name="bbr_no_of_floors" type="xs:int" />
+      <xs:element name="bbr_no_of_floorsSpecified" type="xs:boolean" />
+      <xs:element name="bbr_owner_or_renter" nillable="true" type="xs:string" />
+      <xs:element name="bbr_rooftype" nillable="true" type="xs:string" />
+      <xs:element name="bbr_used_by" nillable="true" type="xs:string" />
+      <xs:element name="bbr_zone" nillable="true" type="xs:string" />
+      <xs:element name="bike_extra_sum_grp" nillable="true" type="xs:string" />
+      <xs:element name="burglar_alarm" nillable="true" type="xs:string" />
+      <xs:element name="child1_end_datee" type="xs:dateTime" />
+      <xs:element name="child1_end_dateeSpecified" type="xs:boolean" />
+      <xs:element name="child1_id_living_out" type="xs:int" />
+      <xs:element name="child1_id_living_outSpecified" type="xs:boolean" />
+      <xs:element name="child2_end_datee" type="xs:dateTime" />
+      <xs:element name="child2_end_dateeSpecified" type="xs:boolean" />
+      <xs:element name="child2_id_living_out" type="xs:int" />
+      <xs:element name="child2_id_living_outSpecified" type="xs:boolean" />
+      <xs:element name="child3_end_datee" type="xs:dateTime" />
+      <xs:element name="child3_end_dateeSpecified" type="xs:boolean" />
+      <xs:element name="child3_id_living_out" type="xs:int" />
+      <xs:element name="child3_id_living_outSpecified" type="xs:boolean" />
+      <xs:element name="child4_end_datee" type="xs:dateTime" />
+      <xs:element name="child4_end_dateeSpecified" type="xs:boolean" />
+      <xs:element name="child4_id_living_out" type="xs:int" />
+      <xs:element name="child4_id_living_outSpecified" type="xs:boolean" />
+      <xs:element name="damages_last_years" type="xs:int" />
+      <xs:element name="damages_last_yearsSpecified" type="xs:boolean" />
+      <xs:element name="general_excess" type="xs:long" />
+      <xs:element name="general_excessSpecified" type="xs:boolean" />
+      <xs:element name="general_excess_code" nillable="true" type="xs:string" />
+      <xs:element name="gf_accomodateion_type" nillable="true" type="xs:string" />
+      <xs:element name="gf_accomodation_type" nillable="true" type="xs:string" />
+      <xs:element name="gf_basement" nillable="true" type="xs:string" />
+      <xs:element name="gf_basement_areasize" type="xs:int" />
+      <xs:element name="gf_basement_areasizeSpecified" type="xs:boolean" />
+      <xs:element name="gf_floor_grp" nillable="true" type="xs:string" />
+      <xs:element name="gf_floor_no" nillable="true" type="xs:string" />
+      <xs:element name="gf_geo_faktor" type="xs:int" />
+      <xs:element name="gf_geo_faktorSpecified" type="xs:boolean" />
+      <xs:element name="gf_housing_usage" nillable="true" type="xs:string" />
+      <xs:element name="gf_no_of_floors" type="xs:int" />
+      <xs:element name="gf_no_of_floorsSpecified" type="xs:boolean" />
+      <xs:element name="gf_owner_or_renter" nillable="true" type="xs:string" />
+      <xs:element name="gf_rooftype" nillable="true" type="xs:string" />
+      <xs:element name="gf_socialfaktor" type="xs:int" />
+      <xs:element name="gf_socialfaktorSpecified" type="xs:boolean" />
+      <xs:element name="gf_zone" nillable="true" type="xs:string" />
+      <xs:element name="gold_extra_sum_grp" nillable="true" type="xs:string" />
+      <xs:element name="gold_pct" type="xs:int" />
+      <xs:element name="gold_pctSpecified" type="xs:boolean" />
+      <xs:element name="location_desc" nillable="true" type="xs:string" />
+      <xs:element name="locations_share_of_sum" type="xs:int" />
+      <xs:element name="locations_share_of_sumSpecified" type="xs:boolean" />
+      <xs:element name="no_of_active_out_children" type="xs:int" />
+      <xs:element name="no_of_adults" type="xs:int" />
+      <xs:element name="no_of_adultsSpecified" type="xs:boolean" />
+      <xs:element name="no_of_children" type="xs:int" />
+      <xs:element name="no_of_childrenSpecified" type="xs:boolean" />
+      <xs:element name="no_of_floors" type="xs:int" />
+      <xs:element name="no_of_floorsSpecified" type="xs:boolean" />
+      <xs:element name="outhouse_extra_sum_grp" nillable="true" type="xs:string" />
+      <xs:element name="outhouse_pct" type="xs:int" />
+      <xs:element name="outhouse_pctSpecified" type="xs:boolean" />
+      <xs:element name="policy_sum" type="xs:int" />
+      <xs:element name="policy_sumSpecified" type="xs:boolean" />
+      <xs:element name="policy_sum_code" nillable="true" type="xs:string" />
+      <xs:element name="postal_code" nillable="true" type="xs:string" />
+      <xs:element name="postal_code_grp" nillable="true" type="xs:string" />
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q12:ArrayOfstring" />
+      <xs:element name="rki_yn" nillable="true" type="xs:string" />
+      <xs:element name="spouse_id_no" type="xs:int" />
+      <xs:element name="spouse_id_noSpecified" type="xs:boolean" />
+      <xs:element name="tariff_user" type="xs:int" />
+      <xs:element name="tariff_userSpecified" type="xs:boolean" />
+      <xs:element name="tariff_user_age" type="xs:int" />
+      <xs:element name="tariff_user_ageSpecified" type="xs:boolean" />
+      <xs:element name="tariff_user_age_at_first_start" type="xs:int" />
+      <xs:element name="tariff_user_age_at_first_startSpecified" type="xs:boolean" />
+      <xs:element name="tariftype" nillable="true" type="xs:string" />
+      <xs:element name="travel_area" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_IN" nillable="true" type="tns:parameters_IN" />
+  <xs:complexType name="risk_IN">
+    <xs:sequence>
+      <xs:element name="addAllRisks" type="tns:yes_no" />
+      <xs:element name="addAllRisksSpecified" type="xs:boolean" />
+      <xs:element name="ansvar" nillable="true" type="tns:risk_generic" />
+      <xs:element name="briller_og_hoereapparater" nillable="true" type="tns:risk_generic" />
+      <xs:element name="cykelforsikring" nillable="true" type="tns:risk_generic" />
+      <xs:element name="elektronikforsikring" nillable="true" type="tns:risk_generic" />
+      <xs:element name="elskade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="garantifond" nillable="true" type="tns:risk_generic" />
+      <xs:element name="glas_og_sanitet" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="idsikring" nillable="true" type="tns:risk_generic" />
+      <xs:element name="indbo" nillable="true" type="tns:risk_generic" />
+      <xs:element name="itudstyr_fra_uddannelsessted" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="pludselig_skade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__afbestilling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__europa_inkl_tyrkiet" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__ski_og_sport" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rejse__verden" nillable="true" type="tns:risk_generic" />
+      <xs:element name="retshjaelp" nillable="true" type="tns:risk_generic" />
+      <xs:element name="skadesforsikringsafgift" nillable="true" type="tns:risk_generic" />
+      <xs:element name="statsafgift" nillable="true" type="tns:risk_generic" />
+      <xs:element name="stormflod_og_stormfald" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udeboende_barn_under_26_aar" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_cykel" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_guld_soelv_mm" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_indbo_i_udhuse" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_vandskade" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_IN" nillable="true" type="tns:risk_IN" />
+  <xs:complexType name="HS_request">
+    <xs:sequence>
+      <xs:element name="HSproduct" nillable="true" type="tns:HSproduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HS_request" nillable="true" type="tns:HS_request" />
+  <xs:complexType name="HSproduct">
+    <xs:sequence>
+      <xs:element name="HSproductLine" nillable="true" type="tns:HSproductLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HSproduct" nillable="true" type="tns:HSproduct" />
+  <xs:complexType name="HSproductLine">
+    <xs:sequence>
+      <xs:element name="HSobject" nillable="true" type="tns:HSobject" />
+      <xs:element name="affinity" type="xs:int" />
+      <xs:element name="affinitySpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HSproductLine" nillable="true" type="tns:HSproductLine" />
+  <xs:complexType name="HSobject">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:parameters_hs" />
+      <xs:element name="risk" nillable="true" type="tns:risk_hs" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HSobject" nillable="true" type="tns:HSobject" />
+  <xs:complexType name="parameters_hs">
+    <xs:sequence>
+      <xs:element name="addAllRisks" nillable="true" type="xs:string" />
+      <xs:element name="affinity_no" nillable="true" type="xs:string" />
+      <xs:element name="backflowblocker_yn" nillable="true" type="xs:string" />
+      <xs:element name="bbr_add_buildyear" nillable="true" type="xs:string" />
+      <xs:element name="bbr_additional_energy_source" nillable="true" type="xs:string" />
+      <xs:element name="bbr_ant_bebo_lejl" type="xs:int" />
+      <xs:element name="bbr_ant_bebo_lejl_paa_ejd" type="xs:int" />
+      <xs:element name="bbr_ant_bygn_paa_ejd" type="xs:int" />
+      <xs:element name="bbr_ant_ejerlejl_paa_ejd" type="xs:int" />
+      <xs:element name="bbr_ant_enh_paa_ejd" nillable="true" type="xs:string" />
+      <xs:element name="bbr_ant_erhvenh_paa_ejd" type="xs:int" />
+      <xs:element name="bbr_anvendelse_kode" nillable="true" type="xs:string" />
+      <xs:element name="bbr_basement_sqm" type="xs:int" />
+      <xs:element name="bbr_buildyear" nillable="true" type="xs:string" />
+      <xs:element name="bbr_business_sqm" type="xs:int" />
+      <xs:element name="bbr_exteriorwall_material" nillable="true" type="xs:string" />
+      <xs:element name="bbr_heat_installation" nillable="true" type="xs:string" />
+      <xs:element name="bbr_heating_means" nillable="true" type="xs:string" />
+      <xs:element name="bbr_kommunekode" nillable="true" type="xs:string" />
+      <xs:element name="bbr_kvhx" nillable="true" type="xs:string" />
+      <xs:element name="bbr_livingspace_in_basem_sqm" type="xs:int" />
+      <xs:element name="bbr_livingspace_total_sqm" type="xs:int" />
+      <xs:element name="bbr_matrikelbogstav" nillable="true" type="xs:string" />
+      <xs:element name="bbr_matrikelnr" nillable="true" type="xs:string" />
+      <xs:element name="bbr_no_of_floors" type="xs:int" />
+      <xs:element name="bbr_no_of_livingbuildings" type="xs:int" />
+      <xs:element name="bbr_no_of_toilets" nillable="true" type="xs:string" />
+      <xs:element name="bbr_outh_sqm" type="xs:int" />
+      <xs:element name="bbr_preservationconditions" nillable="true" type="xs:string" />
+      <xs:element name="bbr_primary_warming" nillable="true" type="xs:string" />
+      <xs:element name="bbr_rental" nillable="true" type="xs:string" />
+      <xs:element name="bbr_roof_sqm" type="xs:int" />
+      <xs:element name="bbr_rooftype" nillable="true" type="xs:string" />
+      <xs:element name="bbr_samlet_bebygget_areal" type="xs:int" />
+      <xs:element name="bbr_samlet_boligareal_i_byg" type="xs:int" />
+      <xs:element name="bbr_samlet_erhvervsareal_i_byg" type="xs:int" />
+      <xs:element name="bbr_smallbuild_sqm" type="xs:int" />
+      <xs:element name="bbr_stednavn" nillable="true" type="xs:string" />
+      <xs:element name="bbr_total_business_sqm" type="xs:int" />
+      <xs:element name="bbr_use_of_building" nillable="true" type="xs:string" />
+      <xs:element name="bbr_used_roof_sqm" type="xs:int" />
+      <xs:element name="bbr_varmeinstallation_kode" nillable="true" type="xs:string" />
+      <xs:element name="bbr_zone" nillable="true" type="xs:string" />
+      <xs:element name="bbrtxt_additional_energy_sou" nillable="true" type="xs:string" />
+      <xs:element name="bbrtxt_exteriorwall_material" nillable="true" type="xs:string" />
+      <xs:element name="bbrtxt_heat_installation" nillable="true" type="xs:string" />
+      <xs:element name="bbrtxt_preservationconditions" nillable="true" type="xs:string" />
+      <xs:element name="bbrtxt_primary_warming" nillable="true" type="xs:string" />
+      <xs:element name="bbrtxt_rental" nillable="true" type="xs:string" />
+      <xs:element name="bbrtxt_rooftype" nillable="true" type="xs:string" />
+      <xs:element name="bbrtxt_use_of_building" nillable="true" type="xs:string" />
+      <xs:element name="business_type" nillable="true" type="xs:string" />
+      <xs:element name="conditionreport_under_yn" nillable="true" type="xs:string" />
+      <xs:element name="damages_last_years" type="xs:short" />
+      <xs:element name="damages_last_years_grp" nillable="true" type="xs:string" />
+      <xs:element name="electricity_excess_code" nillable="true" type="xs:string" />
+      <xs:element name="excess_cloudburst" nillable="true" type="xs:string" />
+      <xs:element name="firealarm_yn" nillable="true" type="xs:string" />
+      <xs:element name="general_excess_code" nillable="true" type="xs:string" />
+      <xs:element name="gf_additional_energy_source" nillable="true" type="xs:string" />
+      <xs:element name="gf_basement_sqm" type="xs:int" />
+      <xs:element name="gf_basement_sqm_grp" nillable="true" type="xs:string" />
+      <xs:element name="gf_buildyear" nillable="true" type="xs:string" />
+      <xs:element name="gf_buildyear_grp" nillable="true" type="xs:string" />
+      <xs:element name="gf_business_sqm" type="xs:int" />
+      <xs:element name="gf_business_sqm_grp" nillable="true" type="xs:string" />
+      <xs:element name="gf_exteriorwall_material" nillable="true" type="xs:string" />
+      <xs:element name="gf_livingspace_in_basem_sqm" type="xs:int" />
+      <xs:element name="gf_livingspace_total_sqm" type="xs:int" />
+      <xs:element name="gf_livingspace_total_sqm_grp" type="xs:int" />
+      <xs:element name="gf_no_of_floors" type="xs:int" />
+      <xs:element name="gf_no_of_floors_grp" nillable="true" type="xs:string" />
+      <xs:element name="gf_no_of_livingbuildings" type="xs:short" />
+      <xs:element name="gf_no_of_toilets" nillable="true" type="xs:string" />
+      <xs:element name="gf_no_of_toilets_grp" nillable="true" type="xs:string" />
+      <xs:element name="gf_outhouse_total_sqm" type="xs:int" />
+      <xs:element name="gf_outhouse_total_sqm_grp" nillable="true" type="xs:string" />
+      <xs:element name="gf_preservationconditions" nillable="true" type="xs:string" />
+      <xs:element name="gf_primary_warming" nillable="true" type="xs:string" />
+      <xs:element name="gf_rental" nillable="true" type="xs:string" />
+      <xs:element name="gf_rooftype" nillable="true" type="xs:string" />
+      <xs:element name="gf_use_of_building" nillable="true" type="xs:string" />
+      <xs:element name="gf_zone" nillable="true" type="xs:string" />
+      <xs:element name="glass_excess_code" nillable="true" type="xs:string" />
+      <xs:element name="house_wind_turbine_yn" nillable="true" type="xs:string" />
+      <xs:element name="inspection_date" nillable="true" type="xs:dateTime" />
+      <xs:element name="inspection_status_automatic" nillable="true" type="xs:string" />
+      <xs:element name="inspection_status_manual" nillable="true" type="xs:string" />
+      <xs:element name="inspection_transferred_pol_no" nillable="true" type="xs:string" />
+      <xs:element name="land_registry_number" nillable="true" type="xs:string" />
+      <xs:element name="last_get_date_bbr" nillable="true" type="xs:dateTime" />
+      <xs:element name="location_id" type="xs:long" />
+      <xs:element name="no_of_cloudburst_damages" type="xs:int" />
+      <xs:element name="no_of_cloudburst_damages_grp" nillable="true" type="xs:string" />
+      <xs:element name="ongoing_building" nillable="true" type="xs:string" />
+      <xs:element name="ongoing_building_end_date" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="productlist" nillable="true" type="q13:ArrayOfstring" />
+      <xs:element name="rki_yn" nillable="true" type="xs:string" />
+      <xs:element name="sky_excess_code" nillable="true" type="xs:string" />
+      <xs:element name="solarcells_yn" nillable="true" type="xs:string" />
+      <xs:element name="spouse_id_no" type="xs:long" />
+      <xs:element name="sum_insured" type="xs:long" />
+      <xs:element name="swimmingpool_type" nillable="true" type="xs:string" />
+      <xs:element name="tariff_user" nillable="true" type="xs:string" />
+      <xs:element name="tariff_user_age" type="xs:short" />
+      <xs:element name="tariff_user_age_at_first_start" type="xs:short" />
+      <xs:element name="tariff_user_age_grp" nillable="true" type="xs:string" />
+      <xs:element name="tariftype" nillable="true" type="xs:string" />
+      <xs:element name="wateralarm_yn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="parameters_hs" nillable="true" type="tns:parameters_hs" />
+  <xs:complexType name="risk_hs">
+    <xs:sequence>
+      <xs:element name="brand" nillable="true" type="tns:risk_generic" />
+      <xs:element name="elskade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="glas_og_sanitet" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_kr" nillable="true" type="tns:risk_generic" />
+      <xs:element name="gruppeaftale_pct" nillable="true" type="tns:risk_generic" />
+      <xs:element name="husejeransvar" nillable="true" type="tns:risk_generic" />
+      <xs:element name="ildsvaade_lyn_eksplosion_mm" nillable="true" type="tns:risk_generic" />
+      <xs:element name="kasko" nillable="true" type="tns:risk_generic" />
+      <xs:element name="kosmetiske_forskelle" nillable="true" type="tns:risk_generic" />
+      <xs:element name="overskudsdeling" nillable="true" type="tns:risk_generic" />
+      <xs:element name="pludselig_skade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="raad" nillable="true" type="tns:risk_generic" />
+      <xs:element name="rabat" nillable="true" type="tns:risk_generic" />
+      <xs:element name="retshjaelp" nillable="true" type="tns:risk_generic" />
+      <xs:element name="roer_og_kabel" nillable="true" type="tns:risk_generic" />
+      <xs:element name="stikledning" nillable="true" type="tns:risk_generic" />
+      <xs:element name="svamp_og_insekt" nillable="true" type="tns:risk_generic" />
+      <xs:element name="tyveri_og_haervaerk" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_daekning" nillable="true" type="tns:risk_generic" />
+      <xs:element name="udvidet_vandskade" nillable="true" type="tns:risk_generic" />
+      <xs:element name="vejr_og_vand" nillable="true" type="tns:risk_generic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="risk_hs" nillable="true" type="tns:risk_hs" />
+</xs:schema>

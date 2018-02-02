@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="GF.Service.FandP.PriceCalc.PriceCalcService" CodeBehind="PriceCalcService.svc.cs" %>

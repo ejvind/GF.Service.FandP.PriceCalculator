@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TIAReferenceService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://gfdbendsvc.gf-forsikring.dk:10060/TIAReferenceService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://gfdbendsvc.gf-forsikring.dk:10060/TIAReferenceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://gfdbendsvc.gf-forsikring.dk:10060/TIAReferenceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GF.Service.TIA.Reference.DOM" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITIAReferenceService_GetXlaReference_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetXlaReference" />
+  </wsdl:message>
+  <wsdl:message name="ITIAReferenceService_GetXlaReference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetXlaReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAReferenceService_GetXlaPeReference_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetXlaPeReference" />
+  </wsdl:message>
+  <wsdl:message name="ITIAReferenceService_GetXlaPeReference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetXlaPeReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAReferenceService_GetTariffCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTariffCode" />
+  </wsdl:message>
+  <wsdl:message name="ITIAReferenceService_GetTariffCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTariffCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAReferenceService_GetClubNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClubNumber" />
+  </wsdl:message>
+  <wsdl:message name="ITIAReferenceService_GetClubNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClubNumberResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITIAReferenceService">
+    <wsdl:operation name="GetXlaReference">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAReferenceService/GetXlaReference" message="tns:ITIAReferenceService_GetXlaReference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAReferenceService/GetXlaReferenceResponse" message="tns:ITIAReferenceService_GetXlaReference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXlaPeReference">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAReferenceService/GetXlaPeReference" message="tns:ITIAReferenceService_GetXlaPeReference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAReferenceService/GetXlaPeReferenceResponse" message="tns:ITIAReferenceService_GetXlaPeReference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTariffCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAReferenceService/GetTariffCode" message="tns:ITIAReferenceService_GetTariffCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAReferenceService/GetTariffCodeResponse" message="tns:ITIAReferenceService_GetTariffCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClubNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAReferenceService/GetClubNumber" message="tns:ITIAReferenceService_GetClubNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAReferenceService/GetClubNumberResponse" message="tns:ITIAReferenceService_GetClubNumber_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITIAReferenceService" type="tns:ITIAReferenceService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetXlaReference">
+      <soap:operation soapAction="http://tempuri.org/ITIAReferenceService/GetXlaReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXlaPeReference">
+      <soap:operation soapAction="http://tempuri.org/ITIAReferenceService/GetXlaPeReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTariffCode">
+      <soap:operation soapAction="http://tempuri.org/ITIAReferenceService/GetTariffCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClubNumber">
+      <soap:operation soapAction="http://tempuri.org/ITIAReferenceService/GetClubNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TIAReferenceService">
+    <wsdl:port name="BasicHttpBinding_ITIAReferenceService" binding="tns:BasicHttpBinding_ITIAReferenceService">
+      <soap:address location="http://gfdbendsvc.gf-forsikring.dk:10060/TIAReferenceService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="210f8119-68b5-4bbc-b132-d3abd1eb74d0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://gfdbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TIAPriceCalcService41.xsd" MetadataType="Schema" ID="9c6df602-b4cd-41fd-afd1-61f4dddd3c72" SourceId="1" SourceUrl="http://gfdbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TIAPriceCalcService42.xsd" MetadataType="Schema" ID="5f62048b-a292-4922-b92a-d1743eb0c749" SourceId="1" SourceUrl="http://gfdbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TIAPriceCalcService43.xsd" MetadataType="Schema" ID="fdc4d562-7bde-4c36-9066-598b3cb74707" SourceId="1" SourceUrl="http://gfdbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TIAPriceCalcService44.xsd" MetadataType="Schema" ID="996e9dd2-e405-494a-ae90-0993621aeea1" SourceId="1" SourceUrl="http://gfdbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TIAPriceCalcService11.wsdl" MetadataType="Wsdl" ID="8df41be7-5d7d-424e-b1dc-598a748d70b2" SourceId="1" SourceUrl="http://gfdbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?wsdl" />
+    <MetadataFile FileName="TIAPriceCalcService11.disco" MetadataType="Disco" ID="2c8dfbbe-4cd5-44ed-afc8-9c6e6cc49ee8" SourceId="1" SourceUrl="http://gfdbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

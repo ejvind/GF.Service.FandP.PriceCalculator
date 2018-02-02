@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1a0259ca-f245-4779-aa25-9a6f332bfa7d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://gfpbendsvc.gf-forsikring.dk:10039/KvhxBackendService.2.0.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="KvhxBackendService.wsdl" MetadataType="Wsdl" ID="3c005cf0-09ef-4205-99f9-97f839b4baab" SourceId="1" SourceUrl="http://gfpbendsvc.gf-forsikring.dk:10039/KvhxBackendService.2.0.svc?wsdl" />
+    <MetadataFile FileName="KvhxBackendService.disco" MetadataType="Disco" ID="f3ad4c43-6f69-430a-bf6f-c59a949b6cec" SourceId="1" SourceUrl="http://gfpbendsvc.gf-forsikring.dk:10039/KvhxBackendService.2.0.svc?disco" />
+    <MetadataFile FileName="KvhxBackendService.xsd" MetadataType="Schema" ID="5364e206-9933-4343-bad1-4262a8b86890" SourceId="1" SourceUrl="http://gfpbendsvc.gf-forsikring.dk:10039/KvhxBackendService.2.0.svc?xsd=xsd2" />
+    <MetadataFile FileName="KvhxBackendService1.xsd" MetadataType="Schema" ID="631bb7f4-5677-42c0-b0c9-8eb4c95d04f0" SourceId="1" SourceUrl="http://gfpbendsvc.gf-forsikring.dk:10039/KvhxBackendService.2.0.svc?xsd=xsd1" />
+    <MetadataFile FileName="KvhxBackendService2.xsd" MetadataType="Schema" ID="e74c0cff-7cd2-4a82-837a-49d7c7d0f6cd" SourceId="1" SourceUrl="http://gfpbendsvc.gf-forsikring.dk:10039/KvhxBackendService.2.0.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

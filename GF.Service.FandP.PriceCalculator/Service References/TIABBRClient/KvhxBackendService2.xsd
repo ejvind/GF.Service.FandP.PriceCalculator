@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://gfpbendsvc.gf-forsikring.dk:10039/KvhxBackendService.2.0.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BackendService.DTO" />
+  <xs:element name="ConvertAdressToSpecificKvhx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="kvhxType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="postArea" type="xs:int" />
+        <xs:element minOccurs="0" name="streetName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="streetNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="streetLetter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="floor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="floorApartment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertAdressToSpecificKvhxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConvertAdressToSpecificKvhxResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertAdressToKvhx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postArea" type="xs:int" />
+        <xs:element minOccurs="0" name="streetName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="streetNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="streetLetter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="floor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="floorApartment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertAdressToKvhxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConvertAdressToKvhxResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBbrDataFromAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postArea" type="xs:int" />
+        <xs:element minOccurs="0" name="streetName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="streetNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="streetLetter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="floor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="floorApartment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBbrDataFromAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BackendService.DTO" minOccurs="0" name="GetBbrDataFromAddressResult" nillable="true" type="q1:BbrDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBbrDataFromCprKvhx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cprKvhx" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBbrDataFromCprKvhxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BackendService.DTO" minOccurs="0" name="GetBbrDataFromCprKvhxResult" nillable="true" type="q2:BbrDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBbrDataFromKvhx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="kvhx" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBbrDataFromKvhxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BackendService.DTO" minOccurs="0" name="GetBbrDataFromKvhxResult" nillable="true" type="q3:BbrDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBbrDataFromAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="postArea" type="xs:int" />
+        <xs:element minOccurs="0" name="streetName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="streetNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="streetLetter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="floor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="floorApartment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maxRows" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchBbrDataFromAddressResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BackendService.DTO" minOccurs="0" name="SearchBbrDataFromAddressResult" nillable="true" type="q4:BbrDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,1 @@
+xsd.exe FGXM14_1.xsd FGXMResponse14.xsd /c /f /n:GF.Service.FandP.PriceCalc.DOM /o:C:\tfs03\Gf.Services\GF.Service.FandP.PriceCalculator-Erhvervsbil\GF.Service.FandP.PriceCalculator\DOM

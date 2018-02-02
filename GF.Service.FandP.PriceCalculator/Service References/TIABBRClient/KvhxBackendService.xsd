@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BackendService.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BackendService.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="BbrDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:InputAddress" />
+      <xs:element minOccurs="0" name="BbrDataEntries" nillable="true" type="tns:ArrayOfBbrData" />
+      <xs:element minOccurs="0" name="ErrorInformation" nillable="true" type="tns:ErrorInformation" />
+      <xs:element minOccurs="0" name="Kvhx" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BbrDataResponse" nillable="true" type="tns:BbrDataResponse" />
+  <xs:complexType name="InputAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Floor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FloorApartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostArea" type="xs:int" />
+      <xs:element minOccurs="0" name="StreetLetter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InputAddress" nillable="true" type="tns:InputAddress" />
+  <xs:complexType name="ArrayOfBbrData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BbrData" nillable="true" type="tns:BbrData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBbrData" nillable="true" type="tns:ArrayOfBbrData" />
+  <xs:complexType name="BbrData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AntalBeboelseslejlPaaEjendommen" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalBeboelseslejligheder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalBygningerPaaEjendommen" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalEjerlejlPaaEjendommen" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalEnhederPaaEjendommen" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalErhvervsenhederPaaEjendommen" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalEtagerIBygning" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalSmaabygninger" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntalVaerelser" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ArealAfSmaabygninger" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Badeforhold" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BadeforholdKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeboetAreal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BebyggetAreal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Beliggenhed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BygningensAfloebsforhold" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BygningensAfloebsforholdKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BygningensAnvendelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BygningensAnvendelseKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BygningensVandforsyning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BygningensVandforsyningKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bygningsnr" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DeltaStatuskode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Doer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EjendommensAfloebsforhold" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EjendommensAfloebsforholdKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EjendommensVandforsyning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EjendommensVandforsyningKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ejerlav" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnhedAnvendelse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnhedAnvendelseKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnhedensAreal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EnhedsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Erhvervsareal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EsrEjendomsnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Etage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fredningsforhold" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FredningsforholdKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Husnummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KVHX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kaelderareal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Koekken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KoekkenKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KommuneKode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Matrikelareal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Matrikelbogstav" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Matrikelnr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OmTilbygningsaar" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Opdateringsdato" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Opfoerelsesaar" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Opvarmningsform" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpvarmningsformKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Postdistriktsnavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Postnummer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SamletBebyggetAreal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SamletBoligareal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SamletBoligarealIBygning" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SamletBygningsareal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SamletBygningsareal2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SamletErhvervsAreal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SamletErhvervsarealIBygning" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SamletTagareal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Stednavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplerendeVarmekilde" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplerendeVarmekildeKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tagmateriale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagmaterialeKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TilnaermetEtageareal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Toiletforhold" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToiletforholdKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Udestueareal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Udlejningsforhold" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UdlejningsforholdKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UdnyttetTagareal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Varmeinstallation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VarmeinstallationKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vejkode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="XKoordinat" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="YKoordinat" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Ydervaegsmateriale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YdervaegsmaterialeKode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZonekodeKode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BbrData" nillable="true" type="tns:BbrData" />
+  <xs:complexType name="ErrorInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorOccured" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ErrorText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorInformation" nillable="true" type="tns:ErrorInformation" />
+</xs:schema>

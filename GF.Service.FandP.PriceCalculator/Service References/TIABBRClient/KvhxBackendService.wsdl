@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="KvhxBackendService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://gfpbendsvc.gf-forsikring.dk:10039/KvhxBackendService.2.0.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://gfpbendsvc.gf-forsikring.dk:10039/KvhxBackendService.2.0.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://gfpbendsvc.gf-forsikring.dk:10039/KvhxBackendService.2.0.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BackendService.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IKvhxBackendService_ConvertAdressToSpecificKvhx_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertAdressToSpecificKvhx" />
+  </wsdl:message>
+  <wsdl:message name="IKvhxBackendService_ConvertAdressToSpecificKvhx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertAdressToSpecificKvhxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKvhxBackendService_ConvertAdressToKvhx_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertAdressToKvhx" />
+  </wsdl:message>
+  <wsdl:message name="IKvhxBackendService_ConvertAdressToKvhx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertAdressToKvhxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKvhxBackendService_GetBbrDataFromAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBbrDataFromAddress" />
+  </wsdl:message>
+  <wsdl:message name="IKvhxBackendService_GetBbrDataFromAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBbrDataFromAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKvhxBackendService_GetBbrDataFromCprKvhx_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBbrDataFromCprKvhx" />
+  </wsdl:message>
+  <wsdl:message name="IKvhxBackendService_GetBbrDataFromCprKvhx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBbrDataFromCprKvhxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKvhxBackendService_GetBbrDataFromKvhx_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBbrDataFromKvhx" />
+  </wsdl:message>
+  <wsdl:message name="IKvhxBackendService_GetBbrDataFromKvhx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBbrDataFromKvhxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKvhxBackendService_SearchBbrDataFromAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBbrDataFromAddress" />
+  </wsdl:message>
+  <wsdl:message name="IKvhxBackendService_SearchBbrDataFromAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBbrDataFromAddressResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IKvhxBackendService">
+    <wsdl:operation name="ConvertAdressToSpecificKvhx">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKvhxBackendService/ConvertAdressToSpecificKvhx" message="tns:IKvhxBackendService_ConvertAdressToSpecificKvhx_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKvhxBackendService/ConvertAdressToSpecificKvhxResponse" message="tns:IKvhxBackendService_ConvertAdressToSpecificKvhx_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertAdressToKvhx">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKvhxBackendService/ConvertAdressToKvhx" message="tns:IKvhxBackendService_ConvertAdressToKvhx_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKvhxBackendService/ConvertAdressToKvhxResponse" message="tns:IKvhxBackendService_ConvertAdressToKvhx_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBbrDataFromAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKvhxBackendService/GetBbrDataFromAddress" message="tns:IKvhxBackendService_GetBbrDataFromAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKvhxBackendService/GetBbrDataFromAddressResponse" message="tns:IKvhxBackendService_GetBbrDataFromAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBbrDataFromCprKvhx">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKvhxBackendService/GetBbrDataFromCprKvhx" message="tns:IKvhxBackendService_GetBbrDataFromCprKvhx_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKvhxBackendService/GetBbrDataFromCprKvhxResponse" message="tns:IKvhxBackendService_GetBbrDataFromCprKvhx_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBbrDataFromKvhx">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKvhxBackendService/GetBbrDataFromKvhx" message="tns:IKvhxBackendService_GetBbrDataFromKvhx_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKvhxBackendService/GetBbrDataFromKvhxResponse" message="tns:IKvhxBackendService_GetBbrDataFromKvhx_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBbrDataFromAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKvhxBackendService/SearchBbrDataFromAddress" message="tns:IKvhxBackendService_SearchBbrDataFromAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKvhxBackendService/SearchBbrDataFromAddressResponse" message="tns:IKvhxBackendService_SearchBbrDataFromAddress_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IKvhxBackendService" type="tns:IKvhxBackendService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConvertAdressToSpecificKvhx">
+      <soap:operation soapAction="http://tempuri.org/IKvhxBackendService/ConvertAdressToSpecificKvhx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertAdressToKvhx">
+      <soap:operation soapAction="http://tempuri.org/IKvhxBackendService/ConvertAdressToKvhx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBbrDataFromAddress">
+      <soap:operation soapAction="http://tempuri.org/IKvhxBackendService/GetBbrDataFromAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBbrDataFromCprKvhx">
+      <soap:operation soapAction="http://tempuri.org/IKvhxBackendService/GetBbrDataFromCprKvhx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBbrDataFromKvhx">
+      <soap:operation soapAction="http://tempuri.org/IKvhxBackendService/GetBbrDataFromKvhx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBbrDataFromAddress">
+      <soap:operation soapAction="http://tempuri.org/IKvhxBackendService/SearchBbrDataFromAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KvhxBackendService">
+    <wsdl:port name="BasicHttpBinding_IKvhxBackendService" binding="tns:BasicHttpBinding_IKvhxBackendService">
+      <soap:address location="http://gfpbendsvc.gf-forsikring.dk:10039/KvhxBackendService.2.0.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

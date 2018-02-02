@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.16">
+
+  <xs:simpleType name="StatusCodeType">
+    <xs:restriction base="xs:unsignedInt">
+      <xs:enumeration value="0"></xs:enumeration><!-- Success. Produktpris bliver returneret -->
+      <xs:enumeration value="1"></xs:enumeration><!-- Kunne ikke finde et produkt der matchede -->
+      <xs:enumeration value="2"></xs:enumeration><!-- Kunne ikke tolke forespørgsel -->
+      <xs:enumeration value="13"></xs:enumeration><!-- Geografisk område ikke understøttet -->
+      <xs:enumeration value="100"></xs:enumeration><!-- Anden fejl -->
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:element name="response" >
+    <xs:complexType>
+      <xs:sequence>        
+        <xs:element name="statuscode" type="StatusCodeType"/>
+        <xs:element name="statusmessage" type="xs:string"/><!-- Hvis selskabet ikke kan levere en pris, kan der skrives en besked her. Denne besked kan vises til brugeren. -->
+        <xs:element name="statusdetail" type="xs:string"/><!-- Hvis der er sket en fejl, kan detaljer om fejlen skrives her. Benyttes kun internt. -->
+        <xs:element name="ingenprisgrund" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tilvalg1" type="xs:boolean"></xs:element><!-- Der findes ikke et produkt til den givne søgning som har tilvalg1-->
+              <xs:element name="tilvalg2" type="xs:boolean"></xs:element><!-- Der findes ikke et produkt til den givne søgning som har tilvalg2-->
+              <xs:element name="tilvalg3" type="xs:boolean"></xs:element><!-- Der findes ikke et produkt til den givne søgning som har tilvalg3-->
+              <xs:element name="tilvalg4" type="xs:boolean"></xs:element><!-- Der findes ikke et produkt til den givne søgning som har tilvalg4-->
+              <xs:element name="tilvalg5" type="xs:boolean"></xs:element><!-- Der findes ikke et produkt til den givne søgning som har tilvalg5-->
+              <xs:element name="tilvalg6" type="xs:boolean"></xs:element><!-- Der findes ikke et produkt til den givne søgning som har tilvalg6-->
+              <xs:element name="andet" type="xs:boolean"></xs:element><!-- Der findes ikke et produkt til den givne søgning.-->
+            </xs:sequence>            
+          </xs:complexType>          
+        </xs:element>
+
+        <xs:element name="produkt" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="produktnavn" type="xs:string"/>
+              <!-- Navn på det produkt der matcher søgningen. -->
+              
+              <xs:element name="produktpris" type="xs:double"/>
+              <!-- Prisen på produktet-->
+              <xs:element name="produktpris_forudsaetninger" type="xs:string"/>                          
+              
+              <xs:element name="produktsamlerabat" type="xs:double"/>
+              <!-- Pris for produktet hvis man har flere produkter hos selskabet. -->              
+              <xs:element name="produktsamlerabat_forudsaetninger" type="xs:string"/>
+              
+              <xs:element name="tilbagebetaling_af_praemie" type="xs:boolean"/>
+              <xs:element name="yderligere_information" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+              
+        <!--Bil medtages kun hvis det pris på bil der returneres-->
+        <xs:element name="bil" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              
+              <xs:element name="selvrisiko" type="xs:double"/>
+
+              <xs:element name="ansvar_kasko" type="xs:boolean" /><!-- Tilvalg 1-->
+              <xs:element name="vejhjaelp" type="xs:boolean"/><!-- Tilvalg 2-->
+              <xs:element name="friskade" type="xs:boolean" /><!-- Tilvalg 3-->
+              <xs:element name="udvidetglas" type="xs:boolean"/><!-- Tilvalg 4-->
+              <xs:element name="fastpraemie" type="xs:boolean"/><!-- Tilvalg 5-->
+              <xs:element name="foererdaekning" type="xs:boolean"/><!-- Tilvalg 6 -->   
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!--Hus returneres kun hvis det er pris på hus der returneres-->
+        <xs:element name="hus" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="selvrisiko" type="xs:double"/>
+              
+              <xs:element name="udvidetvand" type="xs:boolean"/><!-- Tilvalg 1-->
+              <xs:element name="dyrskader" type="xs:boolean"/><!-- Tilvalg 2 -->
+              <xs:element name="kosmetiskdaekning" type="xs:boolean"/><!-- Tilvalg 3-->
+              <xs:element name="svampinsekt" type="xs:boolean"/><!-- Tilvalg 4-->
+              <xs:element name="raad" type="xs:boolean"/><!-- Tilvalg 5-->
+              <xs:element name="roerkablerstikledninger" type="xs:boolean"/><!-- Tilvalg 6-->
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!--Indbo returneres kun hvis det er pris på indbo der returneres-->
+        <xs:element name="indbo" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sum" type="xs:double"/>
+              <xs:element name="selvrisiko" type="xs:double"/>
+
+              <xs:element name="glaskumme" type="xs:boolean" /><!-- Tilvalg 1-->
+              <xs:element name="pludseligskade" type="xs:boolean"/><!-- Tilvalg 2-->
+              <xs:element name="elektronik" type="xs:boolean"/><!-- Tilvalg 3-->
+              <xs:element name="rejseeuropa" type="xs:boolean"/><!-- Tilvalg 4-->
+              <xs:element name="rejseverden" type="xs:boolean"/><!-- Tilvalg 5-->
+              <xs:element name="afbestillingsforsikring" type="xs:boolean"/><!-- Tilvalg 6 -->
+
+
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!--Fritidshus returneres kun hvis det er pris på fritidshus der returneres-->
+        <xs:element name="fritidshus" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sum" type="xs:double"/>
+              <xs:element name="selvrisiko" type="xs:double"/>
+
+               <xs:element name="svampinsekt" type="xs:boolean"/> <!-- Tilvalg 1-->
+                    <xs:element name="raad" type="xs:boolean"/> <!-- Tilvalg 2-->
+                    <xs:element name="roerstikledninger" type="xs:boolean"/> <!-- Tilvalg 3-->
+                    <xs:element name="kosmetiskdaekning" type="xs:boolean"/> <!-- Tilvalg 4-->
+                    <xs:element name="lejerskader" type="xs:boolean"/> <!-- Tilvalg 5-->
+                    <xs:element name="elektronik" type="xs:boolean"/> <!-- Tilvalg 6-->
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!--Ulykke returneres kun hvis det er pris på ulykke der returneres.-->
+        <xs:element name="ulykke" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="produktpris_dig" type="xs:double"/>
+              <xs:element name="produktpris_samlever" type="xs:double"/>
+              <xs:element name="produktpris_born" type="xs:double"/>
+              <xs:element name="sum_doed_dig" type="xs:double"/>
+              <xs:element name="sum_doed_samlever" type="xs:double"/>
+              <xs:element name="sum_varigt_men_dig" type="xs:double"/>
+              <xs:element name="sum_varigt_men_samlever" type="xs:double"/>
+              <xs:element name="sum_varigt_men_born" type="xs:double"/>
+
+              <xs:element name="dobbelterstatning" type="xs:boolean"/><!--Tilvalg 1-->
+              <xs:element name="farligsport" type="xs:boolean"/><!--Tilvalg 2-->
+              <xs:element name="motorcykelknallert" type="xs:boolean"/><!--Tilvalg 3-->
+              <xs:element name="strakserstatning" type="xs:boolean"/><!--Tilvalg 4-->              
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        </xs:sequence>
+      <xs:attribute name="schemaVersion" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9d137cb4-936b-4204-aff3-9d850dc39117" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9853/PriceCalcService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PriceCalcService.xsd" MetadataType="Schema" ID="9c060f32-c747-46d5-9a29-e63c5789ad6b" SourceId="1" SourceUrl="http://localhost:9853/PriceCalcService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PriceCalcService1.xsd" MetadataType="Schema" ID="3e0a79c4-7fdd-4a87-90a7-07e17882282f" SourceId="1" SourceUrl="http://localhost:9853/PriceCalcService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PriceCalcService.wsdl" MetadataType="Wsdl" ID="311a065b-7e38-4cc0-8a28-48907fdface1" SourceId="1" SourceUrl="http://localhost:9853/PriceCalcService.svc?wsdl" />
+    <MetadataFile FileName="PriceCalcService.disco" MetadataType="Disco" ID="6bbb6ada-689c-44fa-81c6-f5cf85d9f27f" SourceId="1" SourceUrl="http://localhost:9853/PriceCalcService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

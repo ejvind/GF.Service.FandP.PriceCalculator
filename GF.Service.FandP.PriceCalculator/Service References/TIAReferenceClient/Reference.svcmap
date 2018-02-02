@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="921d7b7b-768b-4f85-b296-3c00e24d31a9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://gftbendsvc.gf-forsikring.dk:10060/TIAReferenceService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TIAReferenceService.xsd" MetadataType="Schema" ID="57fb0d2b-13df-4ea7-bf09-d69bdbd66feb" SourceId="1" SourceUrl="http://gftbendsvc.gf-forsikring.dk:10060/TIAReferenceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TIAReferenceService1.xsd" MetadataType="Schema" ID="575a9522-fadc-49a1-a2de-f73f11cfcacf" SourceId="1" SourceUrl="http://gftbendsvc.gf-forsikring.dk:10060/TIAReferenceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TIAReferenceService.wsdl" MetadataType="Wsdl" ID="d0b2dcbb-4014-4293-af5d-2c263a251e1c" SourceId="1" SourceUrl="http://gftbendsvc.gf-forsikring.dk:10060/TIAReferenceService.svc?wsdl" />
+    <MetadataFile FileName="TIAReferenceService.disco" MetadataType="Disco" ID="094ce9f0-2256-49d7-89cc-0c7323974093" SourceId="1" SourceUrl="http://gftbendsvc.gf-forsikring.dk:10060/TIAReferenceService.svc?disco" />
+    <MetadataFile FileName="TIAReferenceService2.xsd" MetadataType="Schema" ID="eb975f43-4221-43d0-b9ed-5ecd8ba71a9c" SourceId="1" SourceUrl="http://gftbendsvc.gf-forsikring.dk:10060/TIAReferenceService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.16">
+
+  <!--Kode for typen af tagdæknings materiale. 
+      Se: http://digitaliser.dk/resource/2211045
+      Værdisæt: 
+      Built-up : 1 
+      Tagpap (med taghældning) : 2 
+      Fibercement, herunder asbest (bølge- eller skifereternit) : 3 
+      Cementsten : 4 
+      Tegl : 5 
+      Metalplader (bølgeblik, aluminium, o.lign.) : 6 
+      Stråtag : 7 
+      Fibercement (asbestfri) : 10 
+      PVC : 11 
+      Glas : 12 
+      Grønne tage: 20 
+      Ingen : 80 
+      Andet materiale : 90-->
+  <xs:simpleType name="RoofingMaterialCodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
+      <xs:enumeration value="4" />
+      <xs:enumeration value="5" />
+      <xs:enumeration value="6" />
+      <xs:enumeration value="7" />
+      <xs:enumeration value="10" />
+      <xs:enumeration value="11" />
+      <xs:enumeration value="12" />
+      <xs:enumeration value="20" />
+      <xs:enumeration value="80" />
+      <xs:enumeration value="90" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <!--Kode for opvarmningskilde.. 
+  1: Elektricitet
+  2: gasværksgas
+  3: Flydende brandsel (olie, petroleum, flaskegas)
+  4: Fast brandsel (kul, koks, brande mm.)
+  6: Halm
+  7: Naturgas
+ 51: Fjernvarme *)
+ 55: Varmepumpe *)
+  9: Andet -->
+  <xs:simpleType name="HeatingCodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
+      <xs:enumeration value="4" />
+      <xs:enumeration value="6" />
+      <xs:enumeration value="7" />
+      <xs:enumeration value="51" />
+      <xs:enumeration value="55" />
+      <xs:enumeration value="9" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <!--Kode for varme installation. 
+  Se:http://digitaliser.dk/resource/541933
+  Værdier: 
+  1 = Fjernvarme/blokvarme (radiatorsystem el. varmluftanlæg); 
+  2 = Centralvarme fra eget anlæg, et-kammer fyr; 
+  3 = Ovne (kakkelovne, kamin, brændeovne o.l.); 
+  5 = Varmepumpe; 
+  6 = Centralvarme med to fyringsenheder (fast og olie eller gas); 
+  7 = Elovne, elpaneler; 
+  8 = Gasradiator; 
+  9 = Ingen varmeinstallation; 
+  99 = Blandet (Kræver specifikation på enhedsniveau);-->
+  <xs:simpleType name="HeatingInstallationCodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
+      <xs:enumeration value="5" />
+      <xs:enumeration value="6" />
+      <xs:enumeration value="7" />
+      <xs:enumeration value="8" />
+      <xs:enumeration value="9" />
+      <xs:enumeration value="99" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Den anvendelse som bygningen har. Værdier: 
+  110 = Stuehus til landbrugsejendom; 
+  120 = Fritliggende enfamilieshus (parcelhus); 
+  130 = Række-, kæde- eller dobbelthus (lodret adskillelse mellem enhederne); 
+  140 = Etageboligbebyggelse (flerfamiliehus, herunder tofamiliehus (vandret adskillelse mellem enhederne)); 
+  150 = Kollegium; 
+  160 = Døgninstitution (plejehjem, alderdomshjem, børne- eller ungdomshjem); 
+  190 = Anden bygning til helårsbeboelse; 
+  210 = Erhvervsmæssig produktion vedrørende landbrug, skovbrug, gartneri, råstofudvinding og lign.; 
+  220 = Erhvervsmæssig produktion vedrørende industri, håndværk m.v. (fabrik, værksted o. lign.); 
+  230 = El-, gas-, vand- eller varmeværk, forbrændingsanstalt o. lign.; 
+  290 = Anden enhed til produktion og lager i forbindelse med landbrug, industri o. lign.; 
+  310 = Transport- og garageanlæg (fragtmandshal, lufthavnsbygning,banegårdsbygning o. lign.); 
+  320 = Engroshandel og lager.; 
+  330 = Detailhandel m.v.; 
+  390 = Anden bygning til handel, transport etc.; 
+  410 = Biograf, teater, erhvervsmæssig udstilling m.v.; 
+  420 = Bibliotek, museum, kirke o. lign.; 
+  430 = Undervisning og forskning (skole, gymnasium, forskningslaboratorium); 
+  440 = Hospital, fødeklinik o. lign.; 
+  490 = Bygning til anden institution, herunder kaserne, fængsel m.v.; 
+  510 = Sommerhus; 
+  520 = Bygning til ferieformål m.v. bortset fra sommerhus (feriekoloni vandrehjem o. lign.); 
+  530 = Bygning i forbindelse med idrætsudøvelse (klubhus, idrætshal, svømmehal o. lign.); 
+  540 = Kolonihavehus; 
+  590 = Anden bygning til fritidsformål; 
+  910 = Garage med plads til et eller to køretøjer; 
+  920 = Carport; 
+  930 = Udhus;-->
+  <!-- http://digitaliser.dk/resource/542022 -->
+  <xs:simpleType name="UseCodeType">
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="110" />
+      <xs:enumeration value="120" />
+      <xs:enumeration value="130" />
+      <xs:enumeration value="140" />
+      <xs:enumeration value="150" />
+      <xs:enumeration value="160" />
+      <xs:enumeration value="190" />
+      <xs:enumeration value="210" />
+      <xs:enumeration value="220" />
+      <xs:enumeration value="230" />
+      <xs:enumeration value="290" />
+      <xs:enumeration value="310" />
+      <xs:enumeration value="320" />
+      <xs:enumeration value="330" />
+      <xs:enumeration value="390" />
+      <xs:enumeration value="410" />
+      <xs:enumeration value="420" />
+      <xs:enumeration value="430" />
+      <xs:enumeration value="440" />
+      <xs:enumeration value="490" />
+      <xs:enumeration value="510" />
+      <xs:enumeration value="520" />
+      <xs:enumeration value="530" />
+      <xs:enumeration value="540" />
+      <xs:enumeration value="590" />
+      <xs:enumeration value="910" />
+      <xs:enumeration value="920" />
+      <xs:enumeration value="930" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--
+  Værdisæt: 
+  Mursten (tegl, kalksten, cementsten) : 1 
+  Letbeton (lette bloksten, gasbeton) : 2 
+  Plader af fibercement, herunder asbest (eternit el. lign.) : 3 
+  Bindingsværk (med udvendigt synligt træværk) : 4 
+  Træbeklædning : 5 
+  Betonelementer (bygninghøje betonelementer) : 6 
+  Metalplader : 8 
+  Plader af fibercement (asbestfri) : 10 
+  PVC : 11 
+  Glas : 12 
+  Ingen : 80 
+  Andet : 90
+  -->
+  <!-- http://digitaliser.dk/resource/541953/artefact/OuterWallsMaterialCode.xsd -->
+  <xs:simpleType name="OuterWallsMaterialCodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="8"/>
+      <xs:enumeration value="10"/>
+      <xs:enumeration value="11"/>
+      <xs:enumeration value="12"/>
+      <xs:enumeration value="80"/>
+      <xs:enumeration value="90"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ProduktType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="bil"></xs:enumeration>
+      <xs:enumeration value="hus"></xs:enumeration>
+      <xs:enumeration value="indbo"></xs:enumeration>
+      <xs:enumeration value="fritidshus"></xs:enumeration>
+      <xs:enumeration value="ulykke"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PoolPlaceringType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="indendoers"></xs:enumeration>
+      <xs:enumeration value="udendoers"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="request">
+    <xs:complexType>
+      <xs:sequence>
+        <!--Customer indeholder informationer der er fælles for flere forsikringstyper.
+            postnr, adresse og kvhx skal kun udfyldes for Bil, Hus og Indbo og er adressen produktet skal købes til, 
+            f.eks. husets eller bilens adresse.
+            
+            For ulykke skal adressen ikke indtastes, og fritidshus indeholder sin egen adresse.
+            Det er altid adressen for det produkt prisen skal beregnes for der sendes med.
+        -->
+        <xs:element name="customer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="alder" type="xs:unsignedShort"/>
+              <xs:element name="postnr" type="xs:unsignedShort"/>
+              <xs:element name="adresse" type="xs:string"/>
+              <xs:element name="kvhx" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="insurancerequestsforcalculation" type="ProduktType"/>
+        <!-- insurancerequestsforcalculation indeholder den forsikringstype der skal beregnes pris for. Den kan have værdierne Bil,Hus,Indbo,Fritidshus eller Ulykke -->
+        <xs:element name="sessionid" type="xs:string"/>
+        <!--sessionid er en identifikation af en browsersession, altså én bruger der er på forsikringsguiden. Den vil være den samme, så længe brugeren arbejder i samme session. -->
+        <xs:element name="insurancerequest">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bil" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="koersel_aar" type="xs:unsignedShort" />
+                    <xs:element name="model" type="xs:string" />
+                    <xs:element name="modelaar" type="xs:unsignedShort" />
+                    <xs:element name="motor" type="xs:string" />
+                    <xs:element name="fabrikat" type="xs:string" />
+                    <xs:element name="fabrikatkode" type="xs:unsignedShort" />
+                    <xs:element name="modelkode" type="xs:unsignedShort" />
+                    <xs:element name="nypris" type="xs:unsignedInt" />
+                    <xs:element name="hk" type="xs:unsignedShort" />
+                    <xs:element name="modelvariantid" type="xs:unsignedInt"/>
+                    <xs:element name="variant" type="xs:string" />
+                    <xs:element name="typenavn" type="xs:string" minOccurs="0"/>
+                    <xs:element name="egenvaegt" type="xs:unsignedShort" />
+                    <xs:element name="koereklarvaegt" type="xs:unsignedShort" />
+                    <xs:element name="dktypegodkendelsesnumre" type="xs:string" minOccurs="0"/>
+                    <xs:element name="drivmiddel" type="xs:string" />
+                    <xs:element name="kw" type="xs:unsignedShort" />
+                    <xs:element name="stelnummer" type="xs:string" />
+                    <xs:element name="foerste_reg" type="xs:date" />
+                    <xs:element name="reg_nr" type="xs:string" minOccurs="0"/>
+                    <xs:element name="kid" type="xs:unsignedLong" />
+                    <xs:element name="ansvar_kasko" type="xs:boolean" />
+                    <!-- Tilvalg 1-->
+                    <xs:element name="selvrisiko" type="xs:unsignedShort" />
+                    <xs:element name="friskade" type="xs:boolean" />
+                    <!-- Tilvalg 3-->
+                    <xs:element name="brugere_u25" type="xs:boolean" />
+                    <xs:element name="udvidetglas" type="xs:boolean"/>
+                    <!-- Tilvalg 4-->
+                    <xs:element name="fastpraemie" type="xs:boolean"/>
+                    <!-- Tilvalg 5-->
+                    <xs:element name="foererdaekning" type="xs:boolean"/>
+                    <!-- Tilvalg 6 -->
+                    <xs:element name="privateleaset" type="xs:boolean"/>
+                    <xs:element name="vejhjaelp" type="xs:boolean"/>
+                    <!-- Tilvalg 2-->
+                    <xs:element name="antalaarmedbilforsikring" type="xs:unsignedShort"/>
+                    <xs:element name="antalskader" type="xs:unsignedShort"/>
+                    <xs:element name="skade1" type="xs:unsignedShort"/>
+                    <!--skade1: År for skade1. Sættes til nul hvis der ikke er en skade-->
+                    <xs:element name="skade2" type="xs:unsignedShort"/>
+                    <!--skade2: År for skade2. Sættes til nul hvis der ikke er to skader-->
+                    <xs:element name="skade3" type="xs:unsignedShort"/>
+                    <!--skade3: År for skade3. Sættes til nul hvis der ikke er tre skader-->
+                    <xs:element name="klipikoerekort" type="xs:boolean"/>
+                    <xs:element name="rabatordningvalg" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="hus" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="opfoerelsesaar" type="xs:unsignedShort" />
+                    <xs:element name="bebygget_m2" type="xs:unsignedShort" />
+                    <xs:element name="bolig_m2" type="xs:unsignedShort" />
+                    <xs:element name="garage_m2" type="xs:unsignedShort" />
+                    <!--garage_m2 Sættes til 0, hvis der ikke er garage-->
+                    <xs:element name="etager" type="xs:unsignedShort" />
+                    <xs:element name="tagbeklaedning" type="RoofingMaterialCodeType" />
+                    <xs:element name="kaelder_m2" type="xs:unsignedShort"/>
+                    <!--kaelder_m2 Sættes til 0, hvis der ikke er kælder-->
+                    <xs:element name="antal_skader_treaar" type="xs:unsignedShort" />
+                    <xs:element name="opvarmning" type="HeatingCodeType" />
+                    <xs:element name="pool_m2" type="xs:unsignedShort" />
+                    <xs:element name="pool_placering" type="PoolPlaceringType" />
+                    <!--pool_m2 Sættes til 0, hvis der ikke er pool-->
+                    <xs:element name="vandstop" type="xs:boolean" />
+                    <xs:element name="hoejvandslukke" type="xs:boolean" />
+                    <xs:element name="nedlagt_landbrug" type="xs:boolean" />
+                    <xs:element name="toiletbadrum" type="xs:unsignedShort"/>
+                    <xs:element name="straatag_brandisoleret" type="xs:boolean"/>
+                    <xs:element name="udvidetvand" type="xs:boolean"/>
+                    <!-- Tilvalg 1-->
+                    <xs:element name="dyrskader" type="xs:boolean"/>
+                    <!-- Tilvalg 2 -->
+                    <xs:element name="kosmetiskdaekning" type="xs:boolean"/>
+                    <!-- Tilvalg 3-->
+                    <xs:element name="svampinsekt" type="xs:boolean"/>
+                    <!-- Tilvalg 4-->
+                    <xs:element name="raad" type="xs:boolean"/>
+                    <!-- Tilvalg 5-->
+                    <xs:element name="roerkablerstikledninger" type="xs:boolean"/>
+                    <!-- Tilvalg 6-->
+                    <xs:element name="selvrisiko" type="xs:unsignedShort" />
+                    <xs:element name="rabatordningvalg" type="xs:string" minOccurs="0"/>
+                    <!-- Data der ikke vises på guiden -->
+                    <xs:element name="bo_type" type="UseCodeType" />
+                    <xs:element name="ydervaeg_kode" type="OuterWallsMaterialCodeType"/>
+                    <xs:element name="kaelder_lovlig_m2" type="xs:unsignedShort"/>
+                    <xs:element name="varmeinstallation" type="HeatingInstallationCodeType"/>
+                    <xs:element name="erhverv_m2" type="xs:unsignedShort"/>
+                    <xs:element name="lejligheder" type="xs:unsignedShort" />
+                    <xs:element name="overdaek_m2" type="xs:unsignedShort" />
+                    <xs:element name="tagetage_lovlig_m2" type="xs:unsignedShort" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="indbo" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="antal_voksne" type="xs:unsignedShort" />
+                    <xs:element name="antal_boern" type="xs:unsignedShort" />
+                    <xs:element name="bolig_m2" type="xs:unsignedShort" />
+                    <xs:element name="antal_skader_treaar" type="xs:unsignedShort" />
+                    <xs:element name="kaelder_m2" type="xs:unsignedShort"/>
+                    <!--kaelder_m2 Sættes til 0, hvis der ikke er kælder-->
+                    <xs:element name="tagbeklaedning" type="RoofingMaterialCodeType" />
+                    <xs:element name="straatag_brandisoleret" type="xs:boolean"/>
+                    <xs:element name="eksisterende_forsikring" type="xs:boolean"/>
+                    <xs:element name="alarm" type="xs:boolean" />
+                    <xs:element name="tilknyttet_alarmcentral" type="xs:boolean" />
+                    <!-- tilknyttet_alarmcentral sættes til true hvis alarm er tilknyttet et godkendt alarm central -->
+                    <xs:element name="vindueslaas" type="xs:boolean" />
+                    <xs:element name="roegalarm" type="xs:boolean" />
+                    <xs:element name="glaskumme" type="xs:boolean"/>
+                    <xs:element name="pludseligskade" type="xs:boolean"/>
+                    <xs:element name="elektronik" type="xs:boolean"/>
+                    <xs:element name="rejseverden" type="xs:boolean"/>
+                    <xs:element name="rejseeuropa" type="xs:boolean"/>
+                    <xs:element name="afbestillingsforsikring" type="xs:boolean"/>
+                    <xs:element name="indbosum" type="xs:unsignedInt" />
+                    <xs:element name="selvrisiko" type="xs:unsignedShort" />
+                    <xs:element name="rabatordningvalg" type="xs:string" minOccurs="0"/>
+                    <!-- Data der ikke vises på guiden -->
+                    <xs:element name="bo_type" type="UseCodeType" />
+                    <xs:element name="ydervaeg_kode" type="OuterWallsMaterialCodeType"/>
+                    <xs:element name="erhverv_m2" type="xs:unsignedShort"/>
+                    <xs:element name="lejligheder" type="xs:unsignedShort" />
+
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="fritidshus" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="fritidshus_adresse" type="xs:string"/>
+                    <xs:element name="fritidshus_kvhx" type="xs:string"/>
+                    <xs:element name="fritidshus_postnr" type="xs:unsignedShort"/>
+                    <xs:element name="opfoerelsesaar" type="xs:unsignedShort"/>
+                    <xs:element name="bebygget_m2" type="xs:unsignedShort"/>
+                    <xs:element name="bolig_m2" type="xs:unsignedShort" />
+                    <xs:element name="garage_m2" type="xs:unsignedShort"/>
+                    <!--garage_m2 Sættes til 0, hvis der ikke er garage-->
+                    <!--kaelder_m2 Sættes til 0, hvis der ikke er kælder-->
+                    <xs:element name="etager" type="xs:unsignedShort" />
+                    <xs:element name="toiletbadrum" type="xs:unsignedShort"/>
+                    <xs:element name="opvarmning" type="HeatingCodeType" />
+                    <xs:element name="braendeovn" type="xs:boolean"/>
+                    <xs:element name="tagbeklaedning" type="RoofingMaterialCodeType" />
+                    <xs:element name="straatag_brandisoleret" type="xs:boolean"/>
+                    <xs:element name="nedlagt_landbrug" type="xs:boolean" />
+                    <xs:element name="pool_placering" type="PoolPlaceringType" />
+                    <!--pool_m2 Sættes til 0, hvis der ikke er pool-->
+                    <xs:element name="pool_m2" type="xs:unsignedShort" />
+                    <xs:element name="indbosum" type="xs:unsignedInt" />
+                    <xs:element name="selvrisiko" type="xs:unsignedShort" />
+                    <xs:element name="svampinsekt" type="xs:boolean"/>
+                    <!-- Tilvalg 1-->
+                    <xs:element name="raad" type="xs:boolean"/>
+                    <!-- Tilvalg 2-->
+                    <xs:element name="roerstikledninger" type="xs:boolean"/>
+                    <!-- Tilvalg 3-->
+                    <xs:element name="kosmetiskdaekning" type="xs:boolean"/>
+                    <!-- Tilvalg 4-->
+                    <xs:element name="lejerskader" type="xs:boolean"/>
+                    <!-- Tilvalg 5-->
+                    <xs:element name="elektronik" type="xs:boolean"/>
+                    <!-- Tilvalg 6-->
+                    <xs:element name="udlejes" type="xs:boolean"/>
+                    <xs:element name="rabatordningvalg" type="xs:string" minOccurs="0"/>
+                    <xs:element name="antal_skader_treaar" type="xs:unsignedShort" />
+                    <!-- Data der ikke vises på guiden -->
+                    <xs:element name="bo_type" type="UseCodeType" />
+                    <xs:element name="ydervaeg_kode" type="OuterWallsMaterialCodeType"/>
+                    <xs:element name="kaelder_lovlig_m2" type="xs:unsignedShort"/>
+                    <xs:element name="varmeinstallation" type="HeatingInstallationCodeType"/>
+                    <xs:element name="erhverv_m2" type="xs:unsignedShort"/>
+                    <xs:element name="lejligheder" type="xs:unsignedShort" />
+                    <xs:element name="overdaek_m2" type="xs:unsignedShort" />
+                    <xs:element name="tagetage_lovlig_m2" type="xs:unsignedShort" />
+                    <xs:element name="kaelder_m2" type="xs:unsignedShort"/>
+
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ulykke" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="stillingsbetegnelse" type="xs:string" />
+                    <xs:element name="stillingsbetegnelseId" type="xs:unsignedInt" />
+                    <xs:element name="heltidsulykke" type="xs:boolean"/>
+                    <xs:element name="forsikringssum_varigt_men" type="xs:unsignedInt" />
+                    <xs:element name="forsikringssum_doed" type="xs:unsignedInt" />
+                    <xs:element name="dobbelterstatning" type="xs:boolean"/>
+                    <xs:element name="farligsport" type="xs:boolean"/>
+                    <xs:element name="motorcykelknallert" type="xs:boolean"/>
+                    <xs:element name="strakserstatning" type="xs:boolean"/>
+
+                    <xs:element name="samlever" minOccurs="0"  maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="alder" type="xs:unsignedShort"/>
+                          <xs:element name="stillingsbetegnelse" type="xs:string" />
+                          <xs:element name="stillingsbetegnelseId" type="xs:unsignedInt" />
+                          <xs:element name="heltidsulykke" type="xs:boolean"/>
+                          <xs:element name="forsikringssum_varigt_men" type="xs:unsignedInt" />
+                          <xs:element name="forsikringssum_doed" type="xs:unsignedInt" />
+                          <xs:element name="dobbelterstatning" type="xs:boolean"/>
+                          <xs:element name="farligsport" type="xs:boolean"/>
+                          <xs:element name="motorcykelknallert" type="xs:boolean"/>
+                          <xs:element name="strakserstatning" type="xs:boolean"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="boern" minOccurs="0" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="antal_u18" type="xs:unsignedShort" />
+                          <xs:element name="alder" minOccurs="0" maxOccurs="unbounded" type="xs:unsignedShort"></xs:element>
+                          <xs:element name="forsikringssum_varigt_men" type="xs:unsignedInt" />
+                          <xs:element name="dobbelterstatning" type="xs:boolean"/>
+                          <xs:element name="farligsport" type="xs:boolean"/>
+                          <xs:element name="motorcykelknallert" type="xs:boolean"/>
+                          <xs:element name="strakserstatning" type="xs:boolean"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="rabatordningvalg" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="schemaVersion" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

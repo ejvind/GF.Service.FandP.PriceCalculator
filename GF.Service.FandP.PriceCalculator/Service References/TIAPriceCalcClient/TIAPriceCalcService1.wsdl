@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TIAPriceCalcService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://gftbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://gftbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://gftbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" />
+      <xsd:import schemaLocation="http://gftbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceAU_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceAU" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceAU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceAUResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceBA_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceBA" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceBA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceBAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceBI_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceBI" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceBI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceBIResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceCA_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceCA" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceCA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceCAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceEJ_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceEJ" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceEJ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceEJResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceFA_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceFA" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceFA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceFAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceGF_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceGF" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceGF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceGFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceGR_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceGR" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceGR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceGRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceHA_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceHA" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceHA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceHAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceHU_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceHU" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceHU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceHUResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceKN_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceKN" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceKN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceKNResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceMC_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceMC" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceMC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceMCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceSO_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceSO" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceSO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceST_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceST" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceST_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceSTResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceSV_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceSV" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceSV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceSVResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceTI_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceTI" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceTI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceTIResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceUL_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceUL" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceUL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceULResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceUN_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceUN" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceUN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceUNResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceVE_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceVE" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceVE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceVEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceIN" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceINResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceHS_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceHS" />
+  </wsdl:message>
+  <wsdl:message name="ITIAPriceCalcService_CalculatePriceHS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculatePriceHSResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITIAPriceCalcService">
+    <wsdl:operation name="CalculatePriceAU">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceAU" message="tns:ITIAPriceCalcService_CalculatePriceAU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceAUResponse" message="tns:ITIAPriceCalcService_CalculatePriceAU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceBA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceBA" message="tns:ITIAPriceCalcService_CalculatePriceBA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceBAResponse" message="tns:ITIAPriceCalcService_CalculatePriceBA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceBI">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceBI" message="tns:ITIAPriceCalcService_CalculatePriceBI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceBIResponse" message="tns:ITIAPriceCalcService_CalculatePriceBI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceCA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceCA" message="tns:ITIAPriceCalcService_CalculatePriceCA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceCAResponse" message="tns:ITIAPriceCalcService_CalculatePriceCA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceEJ">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceEJ" message="tns:ITIAPriceCalcService_CalculatePriceEJ_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceEJResponse" message="tns:ITIAPriceCalcService_CalculatePriceEJ_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceFA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceFA" message="tns:ITIAPriceCalcService_CalculatePriceFA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceFAResponse" message="tns:ITIAPriceCalcService_CalculatePriceFA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceGF">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceGF" message="tns:ITIAPriceCalcService_CalculatePriceGF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceGFResponse" message="tns:ITIAPriceCalcService_CalculatePriceGF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceGR">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceGR" message="tns:ITIAPriceCalcService_CalculatePriceGR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceGRResponse" message="tns:ITIAPriceCalcService_CalculatePriceGR_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceHA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceHA" message="tns:ITIAPriceCalcService_CalculatePriceHA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceHAResponse" message="tns:ITIAPriceCalcService_CalculatePriceHA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceHU">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceHU" message="tns:ITIAPriceCalcService_CalculatePriceHU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceHUResponse" message="tns:ITIAPriceCalcService_CalculatePriceHU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceKN">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceKN" message="tns:ITIAPriceCalcService_CalculatePriceKN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceKNResponse" message="tns:ITIAPriceCalcService_CalculatePriceKN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceMC">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceMC" message="tns:ITIAPriceCalcService_CalculatePriceMC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceMCResponse" message="tns:ITIAPriceCalcService_CalculatePriceMC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceSO">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceSO" message="tns:ITIAPriceCalcService_CalculatePriceSO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceSOResponse" message="tns:ITIAPriceCalcService_CalculatePriceSO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceST">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceST" message="tns:ITIAPriceCalcService_CalculatePriceST_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceSTResponse" message="tns:ITIAPriceCalcService_CalculatePriceST_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceSV">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceSV" message="tns:ITIAPriceCalcService_CalculatePriceSV_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceSVResponse" message="tns:ITIAPriceCalcService_CalculatePriceSV_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceTI">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceTI" message="tns:ITIAPriceCalcService_CalculatePriceTI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceTIResponse" message="tns:ITIAPriceCalcService_CalculatePriceTI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceUL">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceUL" message="tns:ITIAPriceCalcService_CalculatePriceUL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceULResponse" message="tns:ITIAPriceCalcService_CalculatePriceUL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceUN">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceUN" message="tns:ITIAPriceCalcService_CalculatePriceUN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceUNResponse" message="tns:ITIAPriceCalcService_CalculatePriceUN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceVE">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceVE" message="tns:ITIAPriceCalcService_CalculatePriceVE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceVEResponse" message="tns:ITIAPriceCalcService_CalculatePriceVE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceIN">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceIN" message="tns:ITIAPriceCalcService_CalculatePriceIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceINResponse" message="tns:ITIAPriceCalcService_CalculatePriceIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceHS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceHS" message="tns:ITIAPriceCalcService_CalculatePriceHS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITIAPriceCalcService/CalculatePriceHSResponse" message="tns:ITIAPriceCalcService_CalculatePriceHS_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITIAPriceCalcService" type="tns:ITIAPriceCalcService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculatePriceAU">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceAU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceBA">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceBA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceBI">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceBI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceCA">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceCA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceEJ">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceEJ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceFA">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceFA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceGF">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceGF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceGR">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceGR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceHA">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceHA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceHU">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceHU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceKN">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceKN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceMC">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceMC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceSO">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceST">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceSV">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceSV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceTI">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceTI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceUL">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceUN">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceUN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceVE">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceVE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceIN">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePriceHS">
+      <soap:operation soapAction="http://tempuri.org/ITIAPriceCalcService/CalculatePriceHS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TIAPriceCalcService">
+    <wsdl:port name="BasicHttpBinding_ITIAPriceCalcService" binding="tns:BasicHttpBinding_ITIAPriceCalcService">
+      <soap:address location="http://gftbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

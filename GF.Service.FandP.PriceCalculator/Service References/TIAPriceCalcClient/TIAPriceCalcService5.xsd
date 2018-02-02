@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://gftbendsvc.gf-forsikring.dk:10020/TIAPriceCalcService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" />
+  <xs:element name="CalculatePriceAU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q1:AU_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceAUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceAUResult" type="xs:boolean" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q2:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceBA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q3:BA_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceBAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceBAResult" type="xs:boolean" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q4:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceBI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q5:BI_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceBIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceBIResult" type="xs:boolean" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q6:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceCA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q7:CA_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceCAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceCAResult" type="xs:boolean" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q8:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceEJ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q9:EJ_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceEJResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceEJResult" type="xs:boolean" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q10:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceFA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q11:FA_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceFAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceFAResult" type="xs:boolean" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q12:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceGF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q13:GF_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceGFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceGFResult" type="xs:boolean" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q14:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceGR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q15:GR_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceGRResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceGRResult" type="xs:boolean" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q16:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceHA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q17:HA_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceHAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceHAResult" type="xs:boolean" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q18:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceHU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q19:HU_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceHUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceHUResult" type="xs:boolean" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q20:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceKN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q21:KN_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceKNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceKNResult" type="xs:boolean" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q22:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceMC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q23:MC_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceMCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceMCResult" type="xs:boolean" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q24:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceSO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q25:SO_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceSOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceSOResult" type="xs:boolean" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q26:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceST">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q27:ST_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceSTResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceSTResult" type="xs:boolean" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q28:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceSV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q29:SV_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceSVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceSVResult" type="xs:boolean" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q30:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceTI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q31:TI_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceTIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceTIResult" type="xs:boolean" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q32:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceUL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q33:UL_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceULResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceULResult" type="xs:boolean" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q34:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceUN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q35:UN_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceUNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceUNResult" type="xs:boolean" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q36:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceVE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q37:VE_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceVEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceVEResult" type="xs:boolean" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q38:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q39:IN_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceINResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceINResult" type="xs:boolean" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q40:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceHS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="req" nillable="true" type="q41:HS_request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculatePriceHSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculatePriceHSResult" type="xs:boolean" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/GF.Service.TIA.PriceCalc.DOM" minOccurs="0" name="res" nillable="true" type="q42:gfcalcResponse" />
+        <xs:element minOccurs="0" name="error" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GF.Service.TIA.Reference.DOM" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GF.Service.TIA.Reference.DOM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="xla_reference_request">
+    <xs:sequence>
+      <xs:element name="code" nillable="true" type="xs:string" />
+      <xs:element name="description" nillable="true" type="xs:string" />
+      <xs:element name="display_code" nillable="true" type="xs:string" />
+      <xs:element name="language" nillable="true" type="xs:string" />
+      <xs:element name="order_by" nillable="true" type="xs:string" />
+      <xs:element name="request_date" type="xs:dateTime" />
+      <xs:element name="site_id" nillable="true" type="xs:int" />
+      <xs:element name="site_idSpecified" type="xs:boolean" />
+      <xs:element name="table_name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="xla_reference_request" nillable="true" type="tns:xla_reference_request" />
+  <xs:complexType name="xla_reference_response">
+    <xs:sequence>
+      <xs:element name="error_record" nillable="true" type="tns:xla_reference_responseError_record" />
+      <xs:element name="reference_record" nillable="true" type="tns:ArrayOfxla_reference_responseReference_record" />
+      <xs:element name="table_name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="xla_reference_response" nillable="true" type="tns:xla_reference_response" />
+  <xs:complexType name="xla_reference_responseError_record">
+    <xs:sequence>
+      <xs:element name="error_code" nillable="true" type="xs:string" />
+      <xs:element name="error_description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="xla_reference_responseError_record" nillable="true" type="tns:xla_reference_responseError_record" />
+  <xs:complexType name="ArrayOfxla_reference_responseReference_record">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="xla_reference_responseReference_record" nillable="true" type="tns:xla_reference_responseReference_record" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfxla_reference_responseReference_record" nillable="true" type="tns:ArrayOfxla_reference_responseReference_record" />
+  <xs:complexType name="xla_reference_responseReference_record">
+    <xs:sequence>
+      <xs:element name="code" nillable="true" type="xs:string" />
+      <xs:element name="description" nillable="true" type="xs:string" />
+      <xs:element name="display_code" nillable="true" type="xs:string" />
+      <xs:element name="help_text" nillable="true" type="xs:string" />
+      <xs:element name="misc_value" nillable="true" type="xs:string" />
+      <xs:element name="sort_no" type="xs:int" />
+      <xs:element name="sort_noSpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="xla_reference_responseReference_record" nillable="true" type="tns:xla_reference_responseReference_record" />
+  <xs:complexType name="xla_pe_reference_request">
+    <xs:sequence>
+      <xs:element name="code" nillable="true" type="xs:string" />
+      <xs:element name="description" nillable="true" type="xs:string" />
+      <xs:element name="display_code" nillable="true" type="xs:string" />
+      <xs:element name="indexed" nillable="true" type="xs:string" />
+      <xs:element name="language" nillable="true" type="xs:string" />
+      <xs:element name="order_by" nillable="true" type="xs:string" />
+      <xs:element name="product_id" nillable="true" type="xs:string" />
+      <xs:element name="table_name" nillable="true" type="xs:string" />
+      <xs:element name="version" nillable="true" type="xs:int" />
+      <xs:element name="versionSpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="xla_pe_reference_request" nillable="true" type="tns:xla_pe_reference_request" />
+  <xs:complexType name="xla_pe_reference_response">
+    <xs:sequence>
+      <xs:element name="error_record" nillable="true" type="tns:xla_pe_reference_responseError_record" />
+      <xs:element name="reference_record" nillable="true" type="tns:ArrayOfxla_pe_reference_responseReference_record" />
+      <xs:element name="table_name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="xla_pe_reference_response" nillable="true" type="tns:xla_pe_reference_response" />
+  <xs:complexType name="xla_pe_reference_responseError_record">
+    <xs:sequence>
+      <xs:element name="error_code" nillable="true" type="xs:string" />
+      <xs:element name="error_description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="xla_pe_reference_responseError_record" nillable="true" type="tns:xla_pe_reference_responseError_record" />
+  <xs:complexType name="ArrayOfxla_pe_reference_responseReference_record">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="xla_pe_reference_responseReference_record" nillable="true" type="tns:xla_pe_reference_responseReference_record" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfxla_pe_reference_responseReference_record" nillable="true" type="tns:ArrayOfxla_pe_reference_responseReference_record" />
+  <xs:complexType name="xla_pe_reference_responseReference_record">
+    <xs:sequence>
+      <xs:element name="code" nillable="true" type="xs:string" />
+      <xs:element name="description" nillable="true" type="xs:string" />
+      <xs:element name="display_code" nillable="true" type="xs:string" />
+      <xs:element name="help_text" nillable="true" type="xs:string" />
+      <xs:element name="sort_no" type="xs:int" />
+      <xs:element name="sort_noSpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="xla_pe_reference_responseReference_record" nillable="true" type="tns:xla_pe_reference_responseReference_record" />
+  <xs:complexType name="tariff_codes_request">
+    <xs:sequence>
+      <xs:element name="code" nillable="true" type="xs:string" />
+      <xs:element name="description" nillable="true" type="xs:string" />
+      <xs:element name="indexed" nillable="true" type="xs:string" />
+      <xs:element name="order_by" nillable="true" type="xs:string" />
+      <xs:element name="product_line_id" nillable="true" type="xs:string" />
+      <xs:element name="round" type="xs:int" />
+      <xs:element name="roundSpecified" type="xs:boolean" />
+      <xs:element name="table_name" nillable="true" type="xs:string" />
+      <xs:element name="version" nillable="true" type="xs:int" />
+      <xs:element name="versionSpecified" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tariff_codes_request" nillable="true" type="tns:tariff_codes_request" />
+  <xs:complexType name="tariff_codes_response">
+    <xs:sequence>
+      <xs:element name="error_record" nillable="true" type="tns:tariff_codes_responseError_record" />
+      <xs:element name="table_name" nillable="true" type="xs:string" />
+      <xs:element name="tariff_code_record" nillable="true" type="tns:ArrayOftariff_codes_responseTariff_code_record" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tariff_codes_response" nillable="true" type="tns:tariff_codes_response" />
+  <xs:complexType name="tariff_codes_responseError_record">
+    <xs:sequence>
+      <xs:element name="error_code" nillable="true" type="xs:string" />
+      <xs:element name="error_description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tariff_codes_responseError_record" nillable="true" type="tns:tariff_codes_responseError_record" />
+  <xs:complexType name="ArrayOftariff_codes_responseTariff_code_record">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tariff_codes_responseTariff_code_record" nillable="true" type="tns:tariff_codes_responseTariff_code_record" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftariff_codes_responseTariff_code_record" nillable="true" type="tns:ArrayOftariff_codes_responseTariff_code_record" />
+  <xs:complexType name="tariff_codes_responseTariff_code_record">
+    <xs:sequence>
+      <xs:element name="code" nillable="true" type="xs:string" />
+      <xs:element name="description" nillable="true" type="xs:string" />
+      <xs:element name="max_val" nillable="true" type="xs:string" />
+      <xs:element name="min_val" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tariff_codes_responseTariff_code_record" nillable="true" type="tns:tariff_codes_responseTariff_code_record" />
+  <xs:complexType name="gf_club_request">
+    <xs:sequence>
+      <xs:element name="company_profession_code" nillable="true" type="xs:string" />
+      <xs:element name="zip_code" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="gf_club_request" nillable="true" type="tns:gf_club_request" />
+  <xs:complexType name="gf_club_response">
+    <xs:sequence>
+      <xs:element name="club_name" nillable="true" type="xs:string" />
+      <xs:element name="club_number" type="xs:int" />
+      <xs:element name="transport_assistance" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="gf_club_response" nillable="true" type="tns:gf_club_response" />
+</xs:schema>
